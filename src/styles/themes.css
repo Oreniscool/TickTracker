@@ -1,0 +1,33 @@
+
+
+:root {
+    /* Pink */
+    --pink-background:rgba(23, 8, 21, 1);
+    --pink-tiles:rgba(136, 28, 120, 0.03);
+    --pink-check:rgba(224, 136, 211, 0.114);
+    --pink-text:rgba(244, 227, 242, 1);
+    --pink-primary:rgba(224, 136, 211, 1);
+    --pink-secondary:rgba(136, 28, 120, 1);
+    --pink-accent:rgba(221, 37, 193, 1);
+    --pink-select:rgba(221, 37, 193, 0.311);
+    --pink-todo:rgba(221, 37, 193, 0.07);
+    --pink-form-background:rgba(96, 0, 82, 0.5);
+    --pink-form-primary:rgba(224, 136, 211, 1);
+    --pink-form-seconday:rgba(191, 36, 167, 1);
+
+}
+
+.pink {
+    --background:var(--pink-background);
+    --tiles:var(--pink-tiles);
+    --check:var(--pink-check);
+    --text:var(--pink-text);
+    --primary:var(--pink-primary);
+    --secondary:var(--pink-secondary);
+    --accent:var(--pink-accent);
+    --select:var(--pink-select);
+    --todo:var(--pink-todo);
+    --form-background:var(--pink-form-background);
+    --form-primary:var(--pink-form-primary);
+    --form-secondary:var(--pink-form-seconday)
+}
