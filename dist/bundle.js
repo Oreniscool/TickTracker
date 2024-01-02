@@ -1242,7 +1242,6 @@ const submittingForm = () => {
         e.preventDefault();
         handleInputs();
         film.remove();
-        (0,_todos__WEBPACK_IMPORTED_MODULE_1__.refreshTodos)();
         todoCreateButton();
     })
 }
@@ -1270,13 +1269,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   addTodo: () => (/* binding */ addTodo),
 /* harmony export */   delTodo: () => (/* binding */ delTodo),
-/* harmony export */   getTodos: () => (/* binding */ getTodos),
-/* harmony export */   refreshTodos: () => (/* binding */ refreshTodos)
+/* harmony export */   getTodos: () => (/* binding */ getTodos)
 /* harmony export */ });
-/* harmony import */ var _inbox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inbox */ "./src/components/inbox.js");
-/* harmony import */ var _navCol__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navCol */ "./src/components/navCol.js");
-/* harmony import */ var _todosDOM__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./todosDOM */ "./src/components/todosDOM.js");
-
+/* harmony import */ var _todosDOM__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todosDOM */ "./src/components/todosDOM.js");
 
 
     let todos = [{
@@ -1287,22 +1282,6 @@ __webpack_require__.r(__webpack_exports__);
         starred:true,
         status:false,
     },
-    {
-        title:"oren",
-        description:"What do you think",
-        due:"26",
-        project:"My projects",
-        starred:true,
-        status:false,
-    },
-    {
-        title:"example2qqe",
-        description:"What do you think",
-        due:"26",
-        project:"My projects",
-        starred:true,
-        status:false,
-    }
 ];
 
 const getTodos = () => {
@@ -1321,6 +1300,7 @@ function todo(title,description,due,project,starred,status) {
 const addTodo = (title,description,due,project,starred,status) => {
     let newTodo = new todo(title,description,due,project,starred,status);
     todos.push(newTodo);
+    (0,_todosDOM__WEBPACK_IMPORTED_MODULE_0__.addToTray)(newTodo);
 }
 
 const findTodo = (name) => {
@@ -1342,13 +1322,7 @@ const removeItem = (index,array) => {
     array.splice(index, 1);
 }
 
-const refreshTodos = () => {
-    console.log(todos);
-    (0,_todosDOM__WEBPACK_IMPORTED_MODULE_2__.clearTray)();
-    (0,_inbox__WEBPACK_IMPORTED_MODULE_0__.closeInbox)();
-    (0,_inbox__WEBPACK_IMPORTED_MODULE_0__.openInbox)();
-    (0,_navCol__WEBPACK_IMPORTED_MODULE_1__.addSelected)(document.querySelector('.inbox'));
-}
+
 
 
 

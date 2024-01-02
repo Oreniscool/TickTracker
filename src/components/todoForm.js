@@ -89,7 +89,6 @@ const submittingForm = () => {
         e.preventDefault();
         handleInputs();
         film.remove();
-        refreshTodos();
         todoCreateButton();
     })
 }
