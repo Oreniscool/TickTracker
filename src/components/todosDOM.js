@@ -10,6 +10,7 @@ const addToTray = (todoObj) => {
     const leftHalf = document.createElement('div');
     const rightHalf = document.createElement('div');
     const bin = document.createElement('div');
+    const star = document.createElement('div');
 
     todo.classList.add('todo');
     checkBox.classList.add('check-box');
@@ -19,6 +20,11 @@ const addToTray = (todoObj) => {
     leftHalf.classList.add('left-half');
     rightHalf.classList.add('right-half');
     bin.classList.add('bin');
+    star.classList.add('todo-star');
+
+    if(todoObj.starred==false) {
+        star.style.display='none';
+    }
 
     if(todoObj.status==true) {
         checkBox.classList.add('completed');
@@ -29,10 +35,10 @@ const addToTray = (todoObj) => {
     projectName.textContent=todoObj.project;
     bin.innerHTML='<i class="fa-solid fa-trash"></i>';
     bin.dataset.hook=todoObj.title;
-    
+    star.innerHTML='<i class="fa-solid fa-star"></i>'
 
     leftHalf.append(checkBox, name);
-    rightHalf.append(projectName, dueDate, bin)
+    rightHalf.append(star, projectName, dueDate, bin);
 
     todo.append(leftHalf,rightHalf);
     tray.appendChild(todo);

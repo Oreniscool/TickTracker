@@ -475,7 +475,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tray {
 
 .bin:hover {
     color: var(--secondary);
-}`, "",{"version":3,"sources":["webpack://./src/styles/tray.css"],"names":[],"mappings":"AAIA;IACI,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,mBAAmB;IACnB,kBAAkB;IAClB,UAAU;IACV,gBAAgB;IAChB,kCAAkC;IAClC,WAAW;IACX,gBAAgB;IAChB,UAAU;AACd;;AAEA;IACI,kCAAkC;IAClC,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,6BAA6B;IAC7B,mBAAmB;IACnB,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,2BAA2B;AAC/B;;;AAGA;EACE,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,kBAAkB;EAClB,eAAe;EACf,2BAA2B;AAC7B;AACA;IACI,gCAAgC;AACpC;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,sBAAsB;AAC1B;;AAEA;IACI,uBAAuB;AAC3B","sourcesContent":["@import url(./themes.css);\r\n\r\n\r\n\r\n.tray {\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--tiles);\r\n    border: none;\r\n    border-radius: 2rem;\r\n    color: var(--text);\r\n    width: 75%;\r\n    min-width: 400px;\r\n    font-family: 'Poppins', sans-serif;\r\n    padding: 2%;\r\n    overflow-y: auto;\r\n    gap:0.5rem;\r\n}\r\n\r\n.todo {\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 1.2rem;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    background-color: var(--todo);\r\n    border-radius: 1rem;\r\n    height: 1rem;\r\n    align-items: center;\r\n    padding: 0.5rem;\r\n    transition: background 0.5s;\r\n}\r\n\r\n\r\n.check-box {\r\n  height: 1.2rem;\r\n  width: 1.2rem;\r\n  background-color: var(--check);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n  transition: background 0.5s;\r\n}\r\n.check-box:hover {\r\n    background-color: var(--primary);\r\n}\r\n\r\n.left-half,.right-half {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    gap: 1rem;\r\n    align-items: center;\r\n}\r\n\r\n.due-date {\r\n    color:var(--primary);\r\n}\r\n\r\n.project-name {\r\n    font-size: 0.8rem;\r\n    color: rgba(255, 255, 255, 0.493);\r\n}\r\n\r\n.bin {\r\n    color: var(--text);\r\n    transition: color 0.5s;\r\n}\r\n\r\n.bin:hover {\r\n    color: var(--secondary);\r\n}"],"sourceRoot":""}]);
+}
+
+.todo-star {
+    color:gold;
+}`, "",{"version":3,"sources":["webpack://./src/styles/tray.css"],"names":[],"mappings":"AAIA;IACI,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,mBAAmB;IACnB,kBAAkB;IAClB,UAAU;IACV,gBAAgB;IAChB,kCAAkC;IAClC,WAAW;IACX,gBAAgB;IAChB,UAAU;AACd;;AAEA;IACI,kCAAkC;IAClC,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,6BAA6B;IAC7B,mBAAmB;IACnB,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,2BAA2B;AAC/B;;;AAGA;EACE,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,kBAAkB;EAClB,eAAe;EACf,2BAA2B;AAC7B;AACA;IACI,gCAAgC;AACpC;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,sBAAsB;AAC1B;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,UAAU;AACd","sourcesContent":["@import url(./themes.css);\r\n\r\n\r\n\r\n.tray {\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--tiles);\r\n    border: none;\r\n    border-radius: 2rem;\r\n    color: var(--text);\r\n    width: 75%;\r\n    min-width: 400px;\r\n    font-family: 'Poppins', sans-serif;\r\n    padding: 2%;\r\n    overflow-y: auto;\r\n    gap:0.5rem;\r\n}\r\n\r\n.todo {\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 1.2rem;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    background-color: var(--todo);\r\n    border-radius: 1rem;\r\n    height: 1rem;\r\n    align-items: center;\r\n    padding: 0.5rem;\r\n    transition: background 0.5s;\r\n}\r\n\r\n\r\n.check-box {\r\n  height: 1.2rem;\r\n  width: 1.2rem;\r\n  background-color: var(--check);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n  transition: background 0.5s;\r\n}\r\n.check-box:hover {\r\n    background-color: var(--primary);\r\n}\r\n\r\n.left-half,.right-half {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    gap: 1rem;\r\n    align-items: center;\r\n}\r\n\r\n.due-date {\r\n    color:var(--primary);\r\n}\r\n\r\n.project-name {\r\n    font-size: 0.8rem;\r\n    color: rgba(255, 255, 255, 0.493);\r\n}\r\n\r\n.bin {\r\n    color: var(--text);\r\n    transition: color 0.5s;\r\n}\r\n\r\n.bin:hover {\r\n    color: var(--secondary);\r\n}\r\n\r\n.todo-star {\r\n    color:gold;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1149,9 +1153,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   openCat: () => (/* binding */ openCat)
 /* harmony export */ });
 /* harmony import */ var _inbox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inbox */ "./src/components/inbox.js");
-/* harmony import */ var _today__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./today */ "./src/components/today.js");
-/* harmony import */ var _todosDOM__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./todosDOM */ "./src/components/todosDOM.js");
-/* harmony import */ var _week__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./week */ "./src/components/week.js");
+/* harmony import */ var _starred__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./starred */ "./src/components/starred.js");
+/* harmony import */ var _today__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./today */ "./src/components/today.js");
+/* harmony import */ var _todosDOM__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./todosDOM */ "./src/components/todosDOM.js");
+/* harmony import */ var _week__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./week */ "./src/components/week.js");
+
 
 
 
@@ -1159,15 +1165,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const openCat = (name) => {
-    (0,_todosDOM__WEBPACK_IMPORTED_MODULE_2__.clearTray)();
+    (0,_todosDOM__WEBPACK_IMPORTED_MODULE_3__.clearTray)();
     if(name=="Inbox") {
         (0,_inbox__WEBPACK_IMPORTED_MODULE_0__.openInbox)();
     }
     else if(name=="Today") {
-        (0,_today__WEBPACK_IMPORTED_MODULE_1__.openToday)();
+        (0,_today__WEBPACK_IMPORTED_MODULE_2__.openToday)();
     }
     else if(name=="This week") {
-        (0,_week__WEBPACK_IMPORTED_MODULE_3__.openThisWeek)();
+        (0,_week__WEBPACK_IMPORTED_MODULE_4__.openThisWeek)();
+    }
+    else if(name=="Starred") {
+        (0,_starred__WEBPACK_IMPORTED_MODULE_1__.openStarred)();
     }
 }
 
@@ -1472,6 +1481,39 @@ const cancelProjForm = () => {
 
 /***/ }),
 
+/***/ "./src/components/starred.js":
+/*!***********************************!*\
+  !*** ./src/components/starred.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   openStarred: () => (/* binding */ openStarred)
+/* harmony export */ });
+/* harmony import */ var _todos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todos */ "./src/components/todos.js");
+
+
+const openStarred= () => {
+    const todos = filterStarred((0,_todos__WEBPACK_IMPORTED_MODULE_0__.getTodos)());
+    (0,_todos__WEBPACK_IMPORTED_MODULE_0__.printTodos)(todos);
+}
+
+
+const filterStarred = (todos) => {
+    const filtered = new Array();
+    todos.forEach(todo => {
+        if(todo.starred==true) {
+            filtered.push(todo);
+        }
+    });
+    return filtered;
+}
+
+
+
+/***/ }),
+
 /***/ "./src/components/today.js":
 /*!*********************************!*\
   !*** ./src/components/today.js ***!
@@ -1600,8 +1642,12 @@ const createFormElements= (formPanel) => {
 
     //star input 
     const inputStar = document.createElement('div');
+    inputStar.dataset.star = false;
     inputStar.classList.add('star-input');
-    inputStar.innerHTML='<i class="fa-sharp fa-regular fa-star"></i>';
+    inputStar.innerHTML='<i class="fa-regular fa-star"></i>';
+    inputStar.addEventListener('click', function(){
+        toggleStar(inputStar);
+    })
 
     //submit button
     const submitButton = document.createElement('button');
@@ -1631,7 +1677,7 @@ const handleInputs = () => {
     const inputProject = document.querySelector('.dropdown');
     const inputStar = document.querySelector('.star-input');
     const inputDate =document.querySelector('.date-input');
-    (0,_todos__WEBPACK_IMPORTED_MODULE_3__.addTodo)(inputTitle.value,inputDesc.value,inputDate.value,inputProject.value,false,false)
+    (0,_todos__WEBPACK_IMPORTED_MODULE_3__.addTodo)(inputTitle.value,inputDesc.value,inputDate.value,inputProject.value,inputStar.dataset.star,false)
 }
 
 const cancelForm = () => {
@@ -1653,6 +1699,18 @@ const addOptions= (dropdown, array) => {
         option.textContent=element;
         dropdown.appendChild(option);
     });
+}
+
+
+const toggleStar = (inputStar) => {
+    if(inputStar.dataset.star=='false') {
+        inputStar.dataset.star=true;
+        inputStar.innerHTML='<i class="fa-solid fa-star" aria-hidden="true"></i>'
+    }
+    else if(inputStar.dataset.star=='true') {
+        inputStar.dataset.star=false;
+        inputStar.innerHTML='<i class="fa-regular fa-star" aria-hidden="true"></i>'
+    }
 }
 
 
@@ -1704,7 +1762,7 @@ function todo(title,description,due,project,starred,status) {
 }
 
 const addTodo = (title,description,due,project,starred,status) => {
-    let newTodo = new todo(title,description,new Date(due),project,starred,status);
+    let newTodo = new todo(title,description,new Date(due),project,(starred === 'true'),status);
     todos.push(newTodo);
     (0,_todosDOM__WEBPACK_IMPORTED_MODULE_1__.addToTray)(newTodo);
     console.log(todos);
@@ -1771,6 +1829,7 @@ const addToTray = (todoObj) => {
     const leftHalf = document.createElement('div');
     const rightHalf = document.createElement('div');
     const bin = document.createElement('div');
+    const star = document.createElement('div');
 
     todo.classList.add('todo');
     checkBox.classList.add('check-box');
@@ -1780,6 +1839,11 @@ const addToTray = (todoObj) => {
     leftHalf.classList.add('left-half');
     rightHalf.classList.add('right-half');
     bin.classList.add('bin');
+    star.classList.add('todo-star');
+
+    if(todoObj.starred==false) {
+        star.style.display='none';
+    }
 
     if(todoObj.status==true) {
         checkBox.classList.add('completed');
@@ -1790,10 +1854,10 @@ const addToTray = (todoObj) => {
     projectName.textContent=todoObj.project;
     bin.innerHTML='<i class="fa-solid fa-trash"></i>';
     bin.dataset.hook=todoObj.title;
-    
+    star.innerHTML='<i class="fa-solid fa-star"></i>'
 
     leftHalf.append(checkBox, name);
-    rightHalf.append(projectName, dueDate, bin)
+    rightHalf.append(star, projectName, dueDate, bin);
 
     todo.append(leftHalf,rightHalf);
     tray.appendChild(todo);

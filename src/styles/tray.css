@@ -68,3 +68,7 @@
 .bin:hover {
     color: var(--secondary);
 }
+
+.todo-star {
+    color:gold;
+}

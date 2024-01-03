@@ -77,8 +77,12 @@ const createFormElements= (formPanel) => {
 
     //star input 
     const inputStar = document.createElement('div');
+    inputStar.dataset.star = false;
     inputStar.classList.add('star-input');
-    inputStar.innerHTML='<i class="fa-sharp fa-regular fa-star"></i>';
+    inputStar.innerHTML='<i class="fa-regular fa-star"></i>';
+    inputStar.addEventListener('click', function(){
+        toggleStar(inputStar);
+    })
 
     //submit button
     const submitButton = document.createElement('button');
@@ -108,7 +112,7 @@ const handleInputs = () => {
     const inputProject = document.querySelector('.dropdown');
     const inputStar = document.querySelector('.star-input');
     const inputDate =document.querySelector('.date-input');
-    addTodo(inputTitle.value,inputDesc.value,inputDate.value,inputProject.value,false,false)
+    addTodo(inputTitle.value,inputDesc.value,inputDate.value,inputProject.value,inputStar.dataset.star,false)
 }
 
 const cancelForm = () => {
@@ -130,6 +134,18 @@ const addOptions= (dropdown, array) => {
         option.textContent=element;
         dropdown.appendChild(option);
     });
+}
+
+
+const toggleStar = (inputStar) => {
+    if(inputStar.dataset.star=='false') {
+        inputStar.dataset.star=true;
+        inputStar.innerHTML='<i class="fa-solid fa-star" aria-hidden="true"></i>'
+    }
+    else if(inputStar.dataset.star=='true') {
+        inputStar.dataset.star=false;
+        inputStar.innerHTML='<i class="fa-regular fa-star" aria-hidden="true"></i>'
+    }
 }
 
 

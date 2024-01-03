@@ -25,7 +25,7 @@ function todo(title,description,due,project,starred,status) {
 }
 
 const addTodo = (title,description,due,project,starred,status) => {
-    let newTodo = new todo(title,description,new Date(due),project,starred,status);
+    let newTodo = new todo(title,description,new Date(due),project,(starred === 'true'),status);
     todos.push(newTodo);
     addToTray(newTodo);
     console.log(todos);
