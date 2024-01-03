@@ -1,4 +1,6 @@
 import '../styles/form.css';
+import { getProjects } from './projects';
+import { getCurrProject } from './projectsDOM';
 import { addTodo, refreshTodos } from './todos';
 
 
@@ -28,10 +30,12 @@ const todoCreateForm = () =>{
     film.appendChild(formPanel);
     createFormElements(formPanel);
     submittingForm();
+    cancelForm();
 }
 
 const createFormElements= (formPanel) => {
     const form = document.createElement('form');
+    form.classList.add('todo-form')
     form.setAttribute('action','');
     //Form inputs
     //title
@@ -58,12 +62,18 @@ const createFormElements= (formPanel) => {
     const inputProject = document.createElement('select');
     inputProject.name = 'project';
     inputProject.classList.add('dropdown');
-    inputProject.innerHTML=`<option value="1">My projects</option>`;
-
+    if(getCurrProject()===null) {
+        addOptions(inputProject,getProjects());
+    }
+    else {
+        addOptions(inputProject,[getCurrProject()]);
+    }
     //due date
-    const inputDate = document.createElement('div');
+    const inputDate = document.createElement('input');
+    inputDate.type='date';
     inputDate.classList.add('date-input');
-    inputDate.textContent="Placeholder";
+    inputDate.name='dueDate';
+    inputDate.valueAsDate = new Date();
 
     //star input 
     const inputStar = document.createElement('div');
@@ -83,7 +93,7 @@ const createFormElements= (formPanel) => {
 }
 
 const submittingForm = () => {
-    const form = document.querySelector('form');
+    const form = document.querySelector('.todo-form');
     const film = document.querySelector('.film');
     form.addEventListener('submit', (e)=> {
         e.preventDefault();
@@ -98,7 +108,28 @@ const handleInputs = () => {
     const inputProject = document.querySelector('.dropdown');
     const inputStar = document.querySelector('.star-input');
     const inputDate =document.querySelector('.date-input');
-    addTodo(inputTitle.value,inputDesc.value,"20",inputProject.value,false,false)
+    addTodo(inputTitle.value,inputDesc.value,inputDate.value,inputProject.value,false,false)
+}
+
+const cancelForm = () => {
+    const form = document.querySelector('.todo-form');
+    const film = document.querySelector('.film');
+
+    window.addEventListener('keydown', function (e){
+        if(e.key=='Escape') {
+            form.remove();
+            film.remove();
+        }
+    })
+}
+
+const addOptions= (dropdown, array) => {
+    array.forEach(element => {
+        const option = document.createElement('option');
+        option.setAttribute('value',element);
+        option.textContent=element;
+        dropdown.appendChild(option);
+    });
 }
 
 

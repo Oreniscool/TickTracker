@@ -1,6 +1,8 @@
 @import url(./themes.css);
 .nav {
     display: flex;
+    flex-direction: column;
+    gap: 4rem;
     background-color: var(--tiles);
     border: none;
     border-radius: 2rem;

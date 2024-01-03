@@ -1,0 +1,38 @@
+#project {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.project-segment {
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    overflow-y: auto;
+    font-size: 1.2rem;
+}
+
+.add-icon {
+    font-size: 2rem;
+    cursor:pointer;
+    transition: color 0.5s;
+}
+.add-icon:hover {
+    color: var(--primary);
+}
+
+.project-input {
+    width: 90%;
+    outline: none;
+    font-size: 1.2rem;
+    height: 1.5rem;
+    padding-left:5%;
+    background-color: var(--select);
+    border: none;
+    color:var(--text);
+    border-radius: 2rem;
+    transition: border 0.5s;
+}
+
+.project-input:focus {
+    border: 1px solid var(--secondary);
+}

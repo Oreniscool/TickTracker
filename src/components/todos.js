@@ -1,10 +1,11 @@
+import { getProjects } from "./projects";
 import { addToTray } from "./todosDOM";
 
     let todos = [{
         title:"Example",
         description:"What do you think",
-        due:"26",
-        project:"My projects",
+        due:new Date(),
+        project:getProjects()[0],
         starred:true,
         status:false,
     },
@@ -24,9 +25,10 @@ function todo(title,description,due,project,starred,status) {
 }
 
 const addTodo = (title,description,due,project,starred,status) => {
-    let newTodo = new todo(title,description,due,project,starred,status);
+    let newTodo = new todo(title,description,new Date(due),project,starred,status);
     todos.push(newTodo);
     addToTray(newTodo);
+    console.log(todos);
 }
 
 const findTodo = (name) => {
@@ -48,6 +50,17 @@ const removeItem = (index,array) => {
     array.splice(index, 1);
 }
 
+const formatDate = (date) => {
+     const day=date.getDate();
+     const month=date.getMonth()+1;
+     return day+'/'+month;
+}
+
+const printTodos = (todos) => {
+    todos.forEach(todoObj => {
+        addToTray(todoObj);
+    });
+}
 
 
-export {getTodos, addTodo, delTodo};
+export {getTodos, addTodo, delTodo, formatDate, printTodos};

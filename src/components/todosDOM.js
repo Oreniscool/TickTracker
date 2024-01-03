@@ -1,7 +1,7 @@
-import { delTodo } from "./todos"; 
+import { delTodo, formatDate } from "./todos"; 
 
 const addToTray = (todoObj) => {
-    const inbox = document.querySelector('.tray');
+    const tray = document.querySelector('.tray');
     const todo = document.createElement('div');    
     const checkBox = document.createElement('div');
     const name = document.createElement('div');
@@ -25,7 +25,7 @@ const addToTray = (todoObj) => {
     }
 
     name.textContent=todoObj.title;
-    dueDate.textContent=todoObj.due;
+    dueDate.textContent=formatDate(todoObj.due);
     projectName.textContent=todoObj.project;
     bin.innerHTML='<i class="fa-solid fa-trash"></i>';
     bin.dataset.hook=todoObj.title;
@@ -35,7 +35,7 @@ const addToTray = (todoObj) => {
     rightHalf.append(projectName, dueDate, bin)
 
     todo.append(leftHalf,rightHalf);
-    inbox.appendChild(todo);
+    tray.appendChild(todo);
     addBinListeners();
 }
 
@@ -60,5 +60,7 @@ const addBinListeners = () => {
 const removeTodo = (bin) => {
     bin.parentElement.parentElement.remove();
 }
+
+
 
 export {addToTray, removeTodo, clearTray}

@@ -1,4 +1,7 @@
 import '../styles/nav-col.css';
+import { openCat } from './categorySwitch';
+import { resetCurrProject } from './projectsDOM';
+
 
 const navCol = () => {
     const content = document.querySelector('.content');
@@ -45,6 +48,11 @@ const addSegmentOnClick = ()=> {
     const elements = Array.from(document.getElementsByClassName('element'));
     elements.forEach(element => {
         element.addEventListener('click', ()=>{
+            const name = element.lastChild.textContent;
+            if(name[0]!=='#') {
+                resetCurrProject();
+                openCat(name);
+            }
             removeSelected(elements);
             addSelected(element);
         })
@@ -61,4 +69,4 @@ const addSelected = (element) => {
     element.classList.add('selected');
 }
 
-export {navCol, loadSegments, addSelected};
+export {navCol, loadSegments, addSelected, removeSelected, addSegmentOnClick};

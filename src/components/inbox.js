@@ -1,30 +1,16 @@
 import '../styles/tray.css'
-import { getTodos} from './todos';
-import { addToTray } from './todosDOM';
+import { getTodos, printTodos} from './todos';
 
-
-
-
-const openInbox= () => {
+const createTray= () => {
     const content = document.querySelector('.content');
+    const tray=document.createElement('div');
+    tray.classList.add('tray');
+    content.appendChild(tray);
+}
+const openInbox= () => {
     const todos = getTodos();
-    const inbox=document.createElement('div');
-    inbox.classList.add('tray');
-    content.appendChild(inbox);
     printTodos(todos);
 }
 
-const printTodos = (todos) => {
-    todos.forEach(todoObj => {
-        addToTray(todoObj);
-    });
-}
 
-const closeInbox=()=>{
-    const inbox = document.querySelector(".tray");
-    inbox.remove();
-}
-
-
-
-export {openInbox, closeInbox};
+export {openInbox, createTray};
