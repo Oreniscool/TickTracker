@@ -8,6 +8,7 @@ import { addToTray } from "./todosDOM";
         project:getProjects()[0],
         starred:true,
         status:false,
+        priority:"Medium",
     },
 ];
 
@@ -15,17 +16,18 @@ const getTodos = () => {
     return todos;
 }
 
-function todo(title,description,due,project,starred,status) {
+function todo(title,description,due,project,starred,status,priority) {
     this.title=title;
     this.description=description;
     this.due=due;
     this.project=project;
     this.starred=starred;
     this.status=status;
+    this.priority=priority;
 }
 
-const addTodo = (title,description,due,project,starred,status) => {
-    let newTodo = new todo(title,description,new Date(due),project,(starred === 'true'),status);
+const addTodo = (title,description,due,project,starred,status,priority) => {
+    let newTodo = new todo(title,description,new Date(due),project,(starred === 'true'),status,priority);
     todos.push(newTodo);
     addToTray(newTodo);
     console.log(todos);

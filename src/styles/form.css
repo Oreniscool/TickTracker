@@ -34,10 +34,11 @@
 
 .form-panel {
     display: block;
+    min-height: 35rem;
     width:40%;
     height:85%;
     background-color: var(--form-background);
-    border-radius: 10%;
+    border-radius: 5rem;
     padding:2rem;
 }
 
@@ -56,7 +57,7 @@ form {
     border: none;
     color: var(--text);
     outline: none;
-    transition: border 0.5s;
+    transition: border 100ms;
     width: 90%;
     max-width: 90%;
 }
@@ -76,20 +77,21 @@ form {
 }
 
 .text-input:focus, .title-input:focus {
-    border: 3px solid var(--secondary);
+    border: 2px solid var(--secondary);
 }
 
 
 .grid {
     display: grid;
-    row-gap: 3rem;
-    column-gap: 10%;
+    margin-left: 2%;
+    row-gap: 3vh;
+    column-gap: 3vw;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,1fr);
 }
 
 .dropdown, .submit-button, .date-input {
-    width: 10rem;
+    width: 10vw;
     height: 2.5rem;
     font-size: 1rem;
     background-color: var(--form-secondary);
@@ -114,3 +116,7 @@ form {
     padding-left: 1rem;
 }
 
+.pro-pri {
+    display: flex;
+    gap:3vw;
+}

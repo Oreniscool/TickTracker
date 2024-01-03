@@ -1,3 +1,4 @@
+import { openInbox } from "./inbox";
 import { delTodo, formatDate } from "./todos"; 
 
 const addToTray = (todoObj) => {
@@ -11,7 +12,9 @@ const addToTray = (todoObj) => {
     const rightHalf = document.createElement('div');
     const bin = document.createElement('div');
     const star = document.createElement('div');
+    const priority = document.createElement('div');
 
+    priority.classList.add('priority');
     todo.classList.add('todo');
     checkBox.classList.add('check-box');
     name.classList.add('name');
@@ -21,6 +24,8 @@ const addToTray = (todoObj) => {
     rightHalf.classList.add('right-half');
     bin.classList.add('bin');
     star.classList.add('todo-star');
+
+    selectPriority(todoObj,priority);
 
     if(todoObj.starred==false) {
         star.style.display='none';
@@ -38,11 +43,12 @@ const addToTray = (todoObj) => {
     star.innerHTML='<i class="fa-solid fa-star"></i>'
 
     leftHalf.append(checkBox, name);
-    rightHalf.append(star, projectName, dueDate, bin);
+    rightHalf.append(star,priority, projectName, dueDate, bin);
 
     todo.append(leftHalf,rightHalf);
     tray.appendChild(todo);
     addBinListeners();
+    
 }
 
 const clearTray = () =>{
@@ -67,6 +73,17 @@ const removeTodo = (bin) => {
     bin.parentElement.parentElement.remove();
 }
 
-
+const selectPriority = (todoObj,priority) => {
+    priority.innerHTML='<i class="fa-solid fa-circle"></i>'
+    if(todoObj.priority=="Low") {
+        priority.classList.add("low");
+    }
+    else if(todoObj.priority=="Medium") {
+        priority.classList.add("medium");
+    }
+    else if(todoObj.priority=="High") {
+        priority.classList.add("high");
+    }
+}
 
 export {addToTray, removeTodo, clearTray}

@@ -56,10 +56,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.create-button {
 
 .form-panel {
     display: block;
+    min-height: 35rem;
     width:40%;
     height:85%;
     background-color: var(--form-background);
-    border-radius: 10%;
+    border-radius: 5rem;
     padding:2rem;
 }
 
@@ -78,7 +79,7 @@ form {
     border: none;
     color: var(--text);
     outline: none;
-    transition: border 0.5s;
+    transition: border 100ms;
     width: 90%;
     max-width: 90%;
 }
@@ -98,20 +99,21 @@ form {
 }
 
 .text-input:focus, .title-input:focus {
-    border: 3px solid var(--secondary);
+    border: 2px solid var(--secondary);
 }
 
 
 .grid {
     display: grid;
-    row-gap: 3rem;
-    column-gap: 10%;
+    margin-left: 2%;
+    row-gap: 3vh;
+    column-gap: 3vw;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,1fr);
 }
 
 .dropdown, .submit-button, .date-input {
-    width: 10rem;
+    width: 10vw;
     height: 2.5rem;
     font-size: 1rem;
     background-color: var(--form-secondary);
@@ -136,7 +138,10 @@ form {
     padding-left: 1rem;
 }
 
-`, "",{"version":3,"sources":["webpack://./src/styles/form.css"],"names":[],"mappings":"AAIA;IACI,eAAe;IACf,cAAc;IACd,UAAU;IACV,gCAAgC;IAChC,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,eAAe;IACf,kBAAkB;IAClB,mBAAmB;IACnB,2BAA2B;IAC3B;AACJ;;AAEA;IACI,kCAAkC;AACtC;;AAEA;IACI,cAAc;IACd,UAAU;IACV,oCAAoC;IACpC,YAAY;IACZ,WAAW;IACX,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,cAAc;IACd,SAAS;IACT,UAAU;IACV,wCAAwC;IACxC,kBAAkB;IAClB,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,mBAAmB;IACnB,QAAQ;AACZ;;AAEA;IACI,kCAAkC;IAClC,eAAe;IACf,mBAAmB;IACnB,YAAY;IACZ,kBAAkB;IAClB,aAAa;IACb,uBAAuB;IACvB,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,aAAa;IACb,kBAAkB;IAClB,qCAAqC;IACrC,UAAU;AACd;;AAEA;IACI,YAAY;IACZ,kBAAkB;IAClB,qCAAqC;IACrC,UAAU;AACd;;AAEA;IACI,kCAAkC;AACtC;;;AAGA;IACI,aAAa;IACb,aAAa;IACb,eAAe;IACf,oCAAoC;IACpC,iCAAiC;AACrC;;AAEA;IACI,YAAY;IACZ,cAAc;IACd,eAAe;IACf,uCAAuC;IACvC,eAAe;AACnB;AACA;IACI,kBAAkB;AACtB;;AAEA;IACI,eAAe;IACf,kBAAkB;IAClB,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,kBAAkB;AACtB","sourcesContent":["@import url(./themes.css);\r\n\r\n\r\n\r\n.create-button {\r\n    position: fixed;\r\n    bottom: 3.5rem;\r\n    right:4rem;\r\n    background-color: var(--primary);\r\n    border-radius: 50%;\r\n    width:3rem;\r\n    height: 3rem;\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    align-items: center;\r\n    transition: background 0.5s;\r\n    color: var(--text)\r\n}\r\n\r\n.create-button:hover {\r\n    background-color: var(--secondary);\r\n}\r\n\r\n.film {\r\n    position:fixed;\r\n    z-index: 1;\r\n    background-color: rgba(0, 0, 0, 0.4);\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content:center;\r\n    align-items: center;\r\n}\r\n\r\n.form-panel {\r\n    display: block;\r\n    width:40%;\r\n    height:85%;\r\n    background-color: var(--form-background);\r\n    border-radius: 10%;\r\n    padding:2rem;\r\n}\r\n\r\nform {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    gap:2rem;\r\n}\r\n\r\n.text-input,.title-input,.dropdown,.submit-button, .date-input {\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 2rem;\r\n    border-radius: 2rem;\r\n    border: none;\r\n    color: var(--text);\r\n    outline: none;\r\n    transition: border 0.5s;\r\n    width: 90%;\r\n    max-width: 90%;\r\n}\r\n\r\n.text-input {\r\n    height: 300px;\r\n    padding-left: 2rem;\r\n    background-color: var(--form-primary);\r\n    margin: 2%;\r\n}\r\n\r\n.title-input {\r\n    height: 4rem;\r\n    padding-left: 2rem;\r\n    background-color: var(--form-primary);\r\n    margin: 2%;\r\n}\r\n\r\n.text-input:focus, .title-input:focus {\r\n    border: 3px solid var(--secondary);\r\n}\r\n\r\n\r\n.grid {\r\n    display: grid;\r\n    row-gap: 3rem;\r\n    column-gap: 10%;\r\n    grid-template-columns: repeat(2,1fr);\r\n    grid-template-rows: repeat(2,1fr);\r\n}\r\n\r\n.dropdown, .submit-button, .date-input {\r\n    width: 10rem;\r\n    height: 2.5rem;\r\n    font-size: 1rem;\r\n    background-color: var(--form-secondary);\r\n    cursor: pointer;\r\n}\r\n.dropdown {\r\n    padding-left: 1rem;\r\n}\r\n\r\n.star-input {\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    cursor: pointer;\r\n    color: var(--text);\r\n}\r\n\r\n.star-input:hover {\r\n    fill: gold;\r\n}\r\n\r\n.date-input {\r\n    padding-left: 1rem;\r\n}\r\n\r\n"],"sourceRoot":""}]);
+.pro-pri {
+    display: flex;
+    gap:3vw;
+}`, "",{"version":3,"sources":["webpack://./src/styles/form.css"],"names":[],"mappings":"AAIA;IACI,eAAe;IACf,cAAc;IACd,UAAU;IACV,gCAAgC;IAChC,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,eAAe;IACf,kBAAkB;IAClB,mBAAmB;IACnB,2BAA2B;IAC3B;AACJ;;AAEA;IACI,kCAAkC;AACtC;;AAEA;IACI,cAAc;IACd,UAAU;IACV,oCAAoC;IACpC,YAAY;IACZ,WAAW;IACX,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,SAAS;IACT,UAAU;IACV,wCAAwC;IACxC,mBAAmB;IACnB,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,mBAAmB;IACnB,QAAQ;AACZ;;AAEA;IACI,kCAAkC;IAClC,eAAe;IACf,mBAAmB;IACnB,YAAY;IACZ,kBAAkB;IAClB,aAAa;IACb,wBAAwB;IACxB,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,aAAa;IACb,kBAAkB;IAClB,qCAAqC;IACrC,UAAU;AACd;;AAEA;IACI,YAAY;IACZ,kBAAkB;IAClB,qCAAqC;IACrC,UAAU;AACd;;AAEA;IACI,kCAAkC;AACtC;;;AAGA;IACI,aAAa;IACb,eAAe;IACf,YAAY;IACZ,eAAe;IACf,oCAAoC;IACpC,iCAAiC;AACrC;;AAEA;IACI,WAAW;IACX,cAAc;IACd,eAAe;IACf,uCAAuC;IACvC,eAAe;AACnB;AACA;IACI,kBAAkB;AACtB;;AAEA;IACI,eAAe;IACf,kBAAkB;IAClB,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,OAAO;AACX","sourcesContent":["@import url(./themes.css);\r\n\r\n\r\n\r\n.create-button {\r\n    position: fixed;\r\n    bottom: 3.5rem;\r\n    right:4rem;\r\n    background-color: var(--primary);\r\n    border-radius: 50%;\r\n    width:3rem;\r\n    height: 3rem;\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    align-items: center;\r\n    transition: background 0.5s;\r\n    color: var(--text)\r\n}\r\n\r\n.create-button:hover {\r\n    background-color: var(--secondary);\r\n}\r\n\r\n.film {\r\n    position:fixed;\r\n    z-index: 1;\r\n    background-color: rgba(0, 0, 0, 0.4);\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content:center;\r\n    align-items: center;\r\n}\r\n\r\n.form-panel {\r\n    display: block;\r\n    min-height: 35rem;\r\n    width:40%;\r\n    height:85%;\r\n    background-color: var(--form-background);\r\n    border-radius: 5rem;\r\n    padding:2rem;\r\n}\r\n\r\nform {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    gap:2rem;\r\n}\r\n\r\n.text-input,.title-input,.dropdown,.submit-button, .date-input {\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 2rem;\r\n    border-radius: 2rem;\r\n    border: none;\r\n    color: var(--text);\r\n    outline: none;\r\n    transition: border 100ms;\r\n    width: 90%;\r\n    max-width: 90%;\r\n}\r\n\r\n.text-input {\r\n    height: 300px;\r\n    padding-left: 2rem;\r\n    background-color: var(--form-primary);\r\n    margin: 2%;\r\n}\r\n\r\n.title-input {\r\n    height: 4rem;\r\n    padding-left: 2rem;\r\n    background-color: var(--form-primary);\r\n    margin: 2%;\r\n}\r\n\r\n.text-input:focus, .title-input:focus {\r\n    border: 2px solid var(--secondary);\r\n}\r\n\r\n\r\n.grid {\r\n    display: grid;\r\n    margin-left: 2%;\r\n    row-gap: 3vh;\r\n    column-gap: 3vw;\r\n    grid-template-columns: repeat(2,1fr);\r\n    grid-template-rows: repeat(2,1fr);\r\n}\r\n\r\n.dropdown, .submit-button, .date-input {\r\n    width: 10vw;\r\n    height: 2.5rem;\r\n    font-size: 1rem;\r\n    background-color: var(--form-secondary);\r\n    cursor: pointer;\r\n}\r\n.dropdown {\r\n    padding-left: 1rem;\r\n}\r\n\r\n.star-input {\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    cursor: pointer;\r\n    color: var(--text);\r\n}\r\n\r\n.star-input:hover {\r\n    fill: gold;\r\n}\r\n\r\n.date-input {\r\n    padding-left: 1rem;\r\n}\r\n\r\n.pro-pri {\r\n    display: flex;\r\n    gap:3vw;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -362,7 +367,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `
     --pink-accent:rgba(221, 37, 193, 1);
     --pink-select:rgba(221, 37, 193, 0.311);
     --pink-todo:rgba(221, 37, 193, 0.07);
-    --pink-form-background:rgba(96, 0, 82, 0.5);
+    --pink-form-background:rgba(75, 2, 64, 0.819);
     --pink-form-primary:rgba(224, 136, 211, 1);
     --pink-form-seconday:rgba(191, 36, 167, 1);
 
@@ -381,7 +386,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `
     --form-background:var(--pink-form-background);
     --form-primary:var(--pink-form-primary);
     --form-secondary:var(--pink-form-seconday)
-}`, "",{"version":3,"sources":["webpack://./src/styles/themes.css"],"names":[],"mappings":";;AAEA;IACI,SAAS;IACT,oCAAoC;IACpC,qCAAqC;IACrC,uCAAuC;IACvC,kCAAkC;IAClC,qCAAqC;IACrC,sCAAsC;IACtC,mCAAmC;IACnC,uCAAuC;IACvC,oCAAoC;IACpC,2CAA2C;IAC3C,0CAA0C;IAC1C,0CAA0C;;AAE9C;;AAEA;IACI,mCAAmC;IACnC,yBAAyB;IACzB,yBAAyB;IACzB,uBAAuB;IACvB,6BAA6B;IAC7B,iCAAiC;IACjC,2BAA2B;IAC3B,2BAA2B;IAC3B,uBAAuB;IACvB,6CAA6C;IAC7C,uCAAuC;IACvC;AACJ","sourcesContent":["\r\n\r\n:root {\r\n    /* Pink */\r\n    --pink-background:rgba(23, 8, 21, 1);\r\n    --pink-tiles:rgba(136, 28, 120, 0.03);\r\n    --pink-check:rgba(224, 136, 211, 0.114);\r\n    --pink-text:rgba(244, 227, 242, 1);\r\n    --pink-primary:rgba(224, 136, 211, 1);\r\n    --pink-secondary:rgba(136, 28, 120, 1);\r\n    --pink-accent:rgba(221, 37, 193, 1);\r\n    --pink-select:rgba(221, 37, 193, 0.311);\r\n    --pink-todo:rgba(221, 37, 193, 0.07);\r\n    --pink-form-background:rgba(96, 0, 82, 0.5);\r\n    --pink-form-primary:rgba(224, 136, 211, 1);\r\n    --pink-form-seconday:rgba(191, 36, 167, 1);\r\n\r\n}\r\n\r\n.pink {\r\n    --background:var(--pink-background);\r\n    --tiles:var(--pink-tiles);\r\n    --check:var(--pink-check);\r\n    --text:var(--pink-text);\r\n    --primary:var(--pink-primary);\r\n    --secondary:var(--pink-secondary);\r\n    --accent:var(--pink-accent);\r\n    --select:var(--pink-select);\r\n    --todo:var(--pink-todo);\r\n    --form-background:var(--pink-form-background);\r\n    --form-primary:var(--pink-form-primary);\r\n    --form-secondary:var(--pink-form-seconday)\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/themes.css"],"names":[],"mappings":";;AAEA;IACI,SAAS;IACT,oCAAoC;IACpC,qCAAqC;IACrC,uCAAuC;IACvC,kCAAkC;IAClC,qCAAqC;IACrC,sCAAsC;IACtC,mCAAmC;IACnC,uCAAuC;IACvC,oCAAoC;IACpC,6CAA6C;IAC7C,0CAA0C;IAC1C,0CAA0C;;AAE9C;;AAEA;IACI,mCAAmC;IACnC,yBAAyB;IACzB,yBAAyB;IACzB,uBAAuB;IACvB,6BAA6B;IAC7B,iCAAiC;IACjC,2BAA2B;IAC3B,2BAA2B;IAC3B,uBAAuB;IACvB,6CAA6C;IAC7C,uCAAuC;IACvC;AACJ","sourcesContent":["\r\n\r\n:root {\r\n    /* Pink */\r\n    --pink-background:rgba(23, 8, 21, 1);\r\n    --pink-tiles:rgba(136, 28, 120, 0.03);\r\n    --pink-check:rgba(224, 136, 211, 0.114);\r\n    --pink-text:rgba(244, 227, 242, 1);\r\n    --pink-primary:rgba(224, 136, 211, 1);\r\n    --pink-secondary:rgba(136, 28, 120, 1);\r\n    --pink-accent:rgba(221, 37, 193, 1);\r\n    --pink-select:rgba(221, 37, 193, 0.311);\r\n    --pink-todo:rgba(221, 37, 193, 0.07);\r\n    --pink-form-background:rgba(75, 2, 64, 0.819);\r\n    --pink-form-primary:rgba(224, 136, 211, 1);\r\n    --pink-form-seconday:rgba(191, 36, 167, 1);\r\n\r\n}\r\n\r\n.pink {\r\n    --background:var(--pink-background);\r\n    --tiles:var(--pink-tiles);\r\n    --check:var(--pink-check);\r\n    --text:var(--pink-text);\r\n    --primary:var(--pink-primary);\r\n    --secondary:var(--pink-secondary);\r\n    --accent:var(--pink-accent);\r\n    --select:var(--pink-select);\r\n    --todo:var(--pink-todo);\r\n    --form-background:var(--pink-form-background);\r\n    --form-primary:var(--pink-form-primary);\r\n    --form-secondary:var(--pink-form-seconday)\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -479,7 +484,23 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tray {
 
 .todo-star {
     color:gold;
-}`, "",{"version":3,"sources":["webpack://./src/styles/tray.css"],"names":[],"mappings":"AAIA;IACI,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,mBAAmB;IACnB,kBAAkB;IAClB,UAAU;IACV,gBAAgB;IAChB,kCAAkC;IAClC,WAAW;IACX,gBAAgB;IAChB,UAAU;AACd;;AAEA;IACI,kCAAkC;IAClC,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,6BAA6B;IAC7B,mBAAmB;IACnB,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,2BAA2B;AAC/B;;;AAGA;EACE,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,kBAAkB;EAClB,eAAe;EACf,2BAA2B;AAC7B;AACA;IACI,gCAAgC;AACpC;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,sBAAsB;AAC1B;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,UAAU;AACd","sourcesContent":["@import url(./themes.css);\r\n\r\n\r\n\r\n.tray {\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--tiles);\r\n    border: none;\r\n    border-radius: 2rem;\r\n    color: var(--text);\r\n    width: 75%;\r\n    min-width: 400px;\r\n    font-family: 'Poppins', sans-serif;\r\n    padding: 2%;\r\n    overflow-y: auto;\r\n    gap:0.5rem;\r\n}\r\n\r\n.todo {\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 1.2rem;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    background-color: var(--todo);\r\n    border-radius: 1rem;\r\n    height: 1rem;\r\n    align-items: center;\r\n    padding: 0.5rem;\r\n    transition: background 0.5s;\r\n}\r\n\r\n\r\n.check-box {\r\n  height: 1.2rem;\r\n  width: 1.2rem;\r\n  background-color: var(--check);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n  transition: background 0.5s;\r\n}\r\n.check-box:hover {\r\n    background-color: var(--primary);\r\n}\r\n\r\n.left-half,.right-half {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    gap: 1rem;\r\n    align-items: center;\r\n}\r\n\r\n.due-date {\r\n    color:var(--primary);\r\n}\r\n\r\n.project-name {\r\n    font-size: 0.8rem;\r\n    color: rgba(255, 255, 255, 0.493);\r\n}\r\n\r\n.bin {\r\n    color: var(--text);\r\n    transition: color 0.5s;\r\n}\r\n\r\n.bin:hover {\r\n    color: var(--secondary);\r\n}\r\n\r\n.todo-star {\r\n    color:gold;\r\n}"],"sourceRoot":""}]);
+}
+
+.priority {
+    font-size: 1rem;
+}
+
+.priority.low {
+    color: green;
+}
+
+.priority.medium {
+    color: yellow;
+}
+
+.priority.high {
+    color: red;
+}`, "",{"version":3,"sources":["webpack://./src/styles/tray.css"],"names":[],"mappings":"AAIA;IACI,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,mBAAmB;IACnB,kBAAkB;IAClB,UAAU;IACV,gBAAgB;IAChB,kCAAkC;IAClC,WAAW;IACX,gBAAgB;IAChB,UAAU;AACd;;AAEA;IACI,kCAAkC;IAClC,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,6BAA6B;IAC7B,mBAAmB;IACnB,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,2BAA2B;AAC/B;;;AAGA;EACE,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,kBAAkB;EAClB,eAAe;EACf,2BAA2B;AAC7B;AACA;IACI,gCAAgC;AACpC;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,sBAAsB;AAC1B;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,UAAU;AACd","sourcesContent":["@import url(./themes.css);\r\n\r\n\r\n\r\n.tray {\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--tiles);\r\n    border: none;\r\n    border-radius: 2rem;\r\n    color: var(--text);\r\n    width: 75%;\r\n    min-width: 400px;\r\n    font-family: 'Poppins', sans-serif;\r\n    padding: 2%;\r\n    overflow-y: auto;\r\n    gap:0.5rem;\r\n}\r\n\r\n.todo {\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 1.2rem;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    background-color: var(--todo);\r\n    border-radius: 1rem;\r\n    height: 1rem;\r\n    align-items: center;\r\n    padding: 0.5rem;\r\n    transition: background 0.5s;\r\n}\r\n\r\n\r\n.check-box {\r\n  height: 1.2rem;\r\n  width: 1.2rem;\r\n  background-color: var(--check);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n  transition: background 0.5s;\r\n}\r\n.check-box:hover {\r\n    background-color: var(--primary);\r\n}\r\n\r\n.left-half,.right-half {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    gap: 1rem;\r\n    align-items: center;\r\n}\r\n\r\n.due-date {\r\n    color:var(--primary);\r\n}\r\n\r\n.project-name {\r\n    font-size: 0.8rem;\r\n    color: rgba(255, 255, 255, 0.493);\r\n}\r\n\r\n.bin {\r\n    color: var(--text);\r\n    transition: color 0.5s;\r\n}\r\n\r\n.bin:hover {\r\n    color: var(--secondary);\r\n}\r\n\r\n.todo-star {\r\n    color:gold;\r\n}\r\n\r\n.priority {\r\n    font-size: 1rem;\r\n}\r\n\r\n.priority.low {\r\n    color: green;\r\n}\r\n\r\n.priority.medium {\r\n    color: yellow;\r\n}\r\n\r\n.priority.high {\r\n    color: red;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1193,10 +1214,18 @@ const openCat = (name) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   createTray: () => (/* binding */ createTray),
-/* harmony export */   openInbox: () => (/* binding */ openInbox)
+/* harmony export */   openInbox: () => (/* binding */ openInbox),
+/* harmony export */   returnToInbox: () => (/* binding */ returnToInbox)
 /* harmony export */ });
 /* harmony import */ var _styles_tray_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/tray.css */ "./src/styles/tray.css");
 /* harmony import */ var _todos__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todos */ "./src/components/todos.js");
+/* harmony import */ var _navCol__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./navCol */ "./src/components/navCol.js");
+/* harmony import */ var _projectsDOM__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectsDOM */ "./src/components/projectsDOM.js");
+/* harmony import */ var _todosDOM__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./todosDOM */ "./src/components/todosDOM.js");
+
+
+
+
 
 
 
@@ -1211,7 +1240,14 @@ const openInbox= () => {
     (0,_todos__WEBPACK_IMPORTED_MODULE_1__.printTodos)(todos);
 }
 
-
+const returnToInbox = () => {
+    if((0,_projectsDOM__WEBPACK_IMPORTED_MODULE_3__.getCurrProject)()==null) {
+        (0,_todosDOM__WEBPACK_IMPORTED_MODULE_4__.clearTray)();
+        openInbox();
+        (0,_navCol__WEBPACK_IMPORTED_MODULE_2__.removeSelected)(document.querySelectorAll('.element'));
+        (0,_navCol__WEBPACK_IMPORTED_MODULE_2__.addSelected)(document.querySelector('.inbox'));
+    } 
+}
 
 
 /***/ }),
@@ -1560,10 +1596,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   todoCreateButton: () => (/* binding */ todoCreateButton)
 /* harmony export */ });
 /* harmony import */ var _styles_form_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/form.css */ "./src/styles/form.css");
-/* harmony import */ var _projects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projects */ "./src/components/projects.js");
-/* harmony import */ var _projectsDOM__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./projectsDOM */ "./src/components/projectsDOM.js");
-/* harmony import */ var _todos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./todos */ "./src/components/todos.js");
-
+/* harmony import */ var _inbox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inbox */ "./src/components/inbox.js");
+/* harmony import */ var _projects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./projects */ "./src/components/projects.js");
+/* harmony import */ var _projectsDOM__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectsDOM */ "./src/components/projectsDOM.js");
+/* harmony import */ var _todos__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./todos */ "./src/components/todos.js");
 
 
 
@@ -1619,19 +1655,21 @@ const createFormElements= (formPanel) => {
     inputDesc.classList.add("text-input")
 
     //grided inputs
-    
     const grid = document.createElement('grid');
     grid.classList.add('grid');
 
+    const priorityAndProject = document.createElement('div');
+    priorityAndProject.classList.add('pro-pri');
     //project inputs
     const inputProject = document.createElement('select');
     inputProject.name = 'project';
     inputProject.classList.add('dropdown');
-    if((0,_projectsDOM__WEBPACK_IMPORTED_MODULE_2__.getCurrProject)()===null) {
-        addOptions(inputProject,(0,_projects__WEBPACK_IMPORTED_MODULE_1__.getProjects)());
+    inputProject.classList.add('project-input');
+    if((0,_projectsDOM__WEBPACK_IMPORTED_MODULE_3__.getCurrProject)()===null) {
+        addOptions(inputProject,(0,_projects__WEBPACK_IMPORTED_MODULE_2__.getProjects)());
     }
     else {
-        addOptions(inputProject,[(0,_projectsDOM__WEBPACK_IMPORTED_MODULE_2__.getCurrProject)()]);
+        addOptions(inputProject,[(0,_projectsDOM__WEBPACK_IMPORTED_MODULE_3__.getCurrProject)()]);
     }
     //due date
     const inputDate = document.createElement('input');
@@ -1640,6 +1678,7 @@ const createFormElements= (formPanel) => {
     inputDate.name='dueDate';
     inputDate.valueAsDate = new Date();
 
+    
     //star input 
     const inputStar = document.createElement('div');
     inputStar.dataset.star = false;
@@ -1649,6 +1688,13 @@ const createFormElements= (formPanel) => {
         toggleStar(inputStar);
     })
 
+    //priority input
+    const inputPriority = document.createElement('select');
+    inputPriority.name = 'priority';
+    inputPriority.classList.add('dropdown');
+    inputPriority.classList.add('priority-input');
+    addOptions(inputPriority,["Low","Medium","High"]);
+
     //submit button
     const submitButton = document.createElement('button');
     submitButton.classList.add('submit-button');
@@ -1656,7 +1702,8 @@ const createFormElements= (formPanel) => {
     submitButton.textContent="Create";
 
     //appending
-    grid.append(inputProject,inputDate,inputStar,submitButton)
+    priorityAndProject.append(inputProject,inputPriority);
+    grid.append(priorityAndProject, inputDate, inputStar, submitButton);
     form.append(inputTitle,inputDesc,grid);
     formPanel.appendChild(form);
 }
@@ -1674,10 +1721,14 @@ const submittingForm = () => {
 const handleInputs = () => {
     const inputTitle = document.querySelector('.title-input');
     const inputDesc = document.querySelector('.text-input');
-    const inputProject = document.querySelector('.dropdown');
+    const inputProject = document.querySelector('.project-input');
     const inputStar = document.querySelector('.star-input');
-    const inputDate =document.querySelector('.date-input');
-    (0,_todos__WEBPACK_IMPORTED_MODULE_3__.addTodo)(inputTitle.value,inputDesc.value,inputDate.value,inputProject.value,inputStar.dataset.star,false)
+    const inputDate = document.querySelector('.date-input');
+    const inputPriority = document.querySelector('.priority-input') 
+    ;(0,_todos__WEBPACK_IMPORTED_MODULE_4__.addTodo)(inputTitle.value,inputDesc.value,inputDate.value,inputProject.value,inputStar.dataset.star,false,inputPriority.value);
+    
+    //code to return to inbox after new todo but when not in any project
+    (0,_inbox__WEBPACK_IMPORTED_MODULE_1__.returnToInbox)();
 }
 
 const cancelForm = () => {
@@ -1745,6 +1796,7 @@ __webpack_require__.r(__webpack_exports__);
         project:(0,_projects__WEBPACK_IMPORTED_MODULE_0__.getProjects)()[0],
         starred:true,
         status:false,
+        priority:"Medium",
     },
 ];
 
@@ -1752,17 +1804,18 @@ const getTodos = () => {
     return todos;
 }
 
-function todo(title,description,due,project,starred,status) {
+function todo(title,description,due,project,starred,status,priority) {
     this.title=title;
     this.description=description;
     this.due=due;
     this.project=project;
     this.starred=starred;
     this.status=status;
+    this.priority=priority;
 }
 
-const addTodo = (title,description,due,project,starred,status) => {
-    let newTodo = new todo(title,description,new Date(due),project,(starred === 'true'),status);
+const addTodo = (title,description,due,project,starred,status,priority) => {
+    let newTodo = new todo(title,description,new Date(due),project,(starred === 'true'),status,priority);
     todos.push(newTodo);
     (0,_todosDOM__WEBPACK_IMPORTED_MODULE_1__.addToTray)(newTodo);
     console.log(todos);
@@ -1816,7 +1869,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   clearTray: () => (/* binding */ clearTray),
 /* harmony export */   removeTodo: () => (/* binding */ removeTodo)
 /* harmony export */ });
-/* harmony import */ var _todos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todos */ "./src/components/todos.js");
+/* harmony import */ var _inbox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inbox */ "./src/components/inbox.js");
+/* harmony import */ var _todos__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todos */ "./src/components/todos.js");
+
  
 
 const addToTray = (todoObj) => {
@@ -1830,7 +1885,9 @@ const addToTray = (todoObj) => {
     const rightHalf = document.createElement('div');
     const bin = document.createElement('div');
     const star = document.createElement('div');
+    const priority = document.createElement('div');
 
+    priority.classList.add('priority');
     todo.classList.add('todo');
     checkBox.classList.add('check-box');
     name.classList.add('name');
@@ -1841,6 +1898,8 @@ const addToTray = (todoObj) => {
     bin.classList.add('bin');
     star.classList.add('todo-star');
 
+    selectPriority(todoObj,priority);
+
     if(todoObj.starred==false) {
         star.style.display='none';
     }
@@ -1850,18 +1909,19 @@ const addToTray = (todoObj) => {
     }
 
     name.textContent=todoObj.title;
-    dueDate.textContent=(0,_todos__WEBPACK_IMPORTED_MODULE_0__.formatDate)(todoObj.due);
+    dueDate.textContent=(0,_todos__WEBPACK_IMPORTED_MODULE_1__.formatDate)(todoObj.due);
     projectName.textContent=todoObj.project;
     bin.innerHTML='<i class="fa-solid fa-trash"></i>';
     bin.dataset.hook=todoObj.title;
     star.innerHTML='<i class="fa-solid fa-star"></i>'
 
     leftHalf.append(checkBox, name);
-    rightHalf.append(star, projectName, dueDate, bin);
+    rightHalf.append(star,priority, projectName, dueDate, bin);
 
     todo.append(leftHalf,rightHalf);
     tray.appendChild(todo);
     addBinListeners();
+    
 }
 
 const clearTray = () =>{
@@ -1876,7 +1936,7 @@ const addBinListeners = () => {
     bins.forEach(bin => {
         bin.addEventListener('click',()=>{
             const name = bin.dataset.hook;
-            (0,_todos__WEBPACK_IMPORTED_MODULE_0__.delTodo)(name);
+            (0,_todos__WEBPACK_IMPORTED_MODULE_1__.delTodo)(name);
             removeTodo(bin);
         })
     });
@@ -1886,7 +1946,18 @@ const removeTodo = (bin) => {
     bin.parentElement.parentElement.remove();
 }
 
-
+const selectPriority = (todoObj,priority) => {
+    priority.innerHTML='<i class="fa-solid fa-circle"></i>'
+    if(todoObj.priority=="Low") {
+        priority.classList.add("low");
+    }
+    else if(todoObj.priority=="Medium") {
+        priority.classList.add("medium");
+    }
+    else if(todoObj.priority=="High") {
+        priority.classList.add("high");
+    }
+}
 
 
 

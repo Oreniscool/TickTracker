@@ -1,9 +1,8 @@
 import '../styles/form.css';
+import { returnToInbox } from './inbox';
 import { getProjects } from './projects';
 import { getCurrProject } from './projectsDOM';
-import { addTodo, refreshTodos } from './todos';
-
-
+import { addTodo } from './todos';
 
 const todoCreateButton = () => {
     const tray = document.querySelector('.tray');
@@ -54,14 +53,16 @@ const createFormElements= (formPanel) => {
     inputDesc.classList.add("text-input")
 
     //grided inputs
-    
     const grid = document.createElement('grid');
     grid.classList.add('grid');
 
+    const priorityAndProject = document.createElement('div');
+    priorityAndProject.classList.add('pro-pri');
     //project inputs
     const inputProject = document.createElement('select');
     inputProject.name = 'project';
     inputProject.classList.add('dropdown');
+    inputProject.classList.add('project-input');
     if(getCurrProject()===null) {
         addOptions(inputProject,getProjects());
     }
@@ -75,6 +76,7 @@ const createFormElements= (formPanel) => {
     inputDate.name='dueDate';
     inputDate.valueAsDate = new Date();
 
+    
     //star input 
     const inputStar = document.createElement('div');
     inputStar.dataset.star = false;
@@ -84,6 +86,13 @@ const createFormElements= (formPanel) => {
         toggleStar(inputStar);
     })
 
+    //priority input
+    const inputPriority = document.createElement('select');
+    inputPriority.name = 'priority';
+    inputPriority.classList.add('dropdown');
+    inputPriority.classList.add('priority-input');
+    addOptions(inputPriority,["Low","Medium","High"]);
+
     //submit button
     const submitButton = document.createElement('button');
     submitButton.classList.add('submit-button');
@@ -91,7 +100,8 @@ const createFormElements= (formPanel) => {
     submitButton.textContent="Create";
 
     //appending
-    grid.append(inputProject,inputDate,inputStar,submitButton)
+    priorityAndProject.append(inputProject,inputPriority);
+    grid.append(priorityAndProject, inputDate, inputStar, submitButton);
     form.append(inputTitle,inputDesc,grid);
     formPanel.appendChild(form);
 }
@@ -109,10 +119,14 @@ const submittingForm = () => {
 const handleInputs = () => {
     const inputTitle = document.querySelector('.title-input');
     const inputDesc = document.querySelector('.text-input');
-    const inputProject = document.querySelector('.dropdown');
+    const inputProject = document.querySelector('.project-input');
     const inputStar = document.querySelector('.star-input');
-    const inputDate =document.querySelector('.date-input');
-    addTodo(inputTitle.value,inputDesc.value,inputDate.value,inputProject.value,inputStar.dataset.star,false)
+    const inputDate = document.querySelector('.date-input');
+    const inputPriority = document.querySelector('.priority-input') 
+    addTodo(inputTitle.value,inputDesc.value,inputDate.value,inputProject.value,inputStar.dataset.star,false,inputPriority.value);
+    
+    //code to return to inbox after new todo but when not in any project
+    returnToInbox();
 }
 
 const cancelForm = () => {

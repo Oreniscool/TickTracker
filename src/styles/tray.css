@@ -72,3 +72,19 @@
 .todo-star {
     color:gold;
 }
+
+.priority {
+    font-size: 1rem;
+}
+
+.priority.low {
+    color: green;
+}
+
+.priority.medium {
+    color: yellow;
+}
+
+.priority.high {
+    color: red;
+}
