@@ -441,7 +441,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tray {
     height: 1rem;
     align-items: center;
     padding: 0.5rem;
-    transition: background 0.5s;
+    transition: box-shadow 0.5s;
+}
+.todo:hover {
+    box-shadow: 0 2px 6px 0 var(--check), 0 4px 10px 0 var(--check);
 }
 .todo-done {
     color: rgba(128, 128, 128, 0.468);
@@ -464,11 +467,19 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tray {
     background-color: var(--primary);
 }
 
+.todo-description {
+    color: gray;
+    font-size: 0.8rem;
+    overflow-y: auto;
+    overflow-x: visible;
+}
+
 .left-half,.right-half {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     align-items: center;
+    overflow-y: auto;
 }
 
 .due-date {
@@ -484,10 +495,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tray {
     color: var(--text);
     transition: color 0.5s;
 }
-
 .bin:hover {
     color: var(--secondary);
 }
+
 
 .todo-star {
     color:gold;
@@ -507,7 +518,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tray {
 
 .priority.high {
     color: red;
-}`, "",{"version":3,"sources":["webpack://./src/styles/tray.css"],"names":[],"mappings":"AAIA;IACI,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,mBAAmB;IACnB,kBAAkB;IAClB,UAAU;IACV,gBAAgB;IAChB,kCAAkC;IAClC,WAAW;IACX,gBAAgB;IAChB,UAAU;AACd;;AAEA;IACI,kCAAkC;IAClC,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,6BAA6B;IAC7B,mBAAmB;IACnB,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,2BAA2B;AAC/B;AACA;IACI,iCAAiC;IACjC,4CAA4C;AAChD;;;AAGA;EACE,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,kBAAkB;EAClB,eAAe;EACf,2BAA2B;AAC7B;AACA;IACI,gCAAgC;AACpC;AACA;IACI,gCAAgC;AACpC;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,sBAAsB;AAC1B;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,UAAU;AACd","sourcesContent":["@import url(./themes.css);\r\n\r\n\r\n\r\n.tray {\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--tiles);\r\n    border: none;\r\n    border-radius: 2rem;\r\n    color: var(--text);\r\n    width: 75%;\r\n    min-width: 400px;\r\n    font-family: 'Poppins', sans-serif;\r\n    padding: 2%;\r\n    overflow-y: auto;\r\n    gap:0.5rem;\r\n}\r\n\r\n.todo {\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 1.2rem;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    background-color: var(--todo);\r\n    border-radius: 1rem;\r\n    height: 1rem;\r\n    align-items: center;\r\n    padding: 0.5rem;\r\n    transition: background 0.5s;\r\n}\r\n.todo-done {\r\n    color: rgba(128, 128, 128, 0.468);\r\n    text-decoration: line-through var(--primary);\r\n}\r\n\r\n\r\n.check-box {\r\n  height: 1.2rem;\r\n  width: 1.2rem;\r\n  background-color: var(--check);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n  transition: background 0.5s;\r\n}\r\n.check-box:hover {\r\n    background-color: var(--primary);\r\n}\r\n.completed {\r\n    background-color: var(--primary);\r\n}\r\n\r\n.left-half,.right-half {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    gap: 1rem;\r\n    align-items: center;\r\n}\r\n\r\n.due-date {\r\n    color:var(--primary);\r\n}\r\n\r\n.project-name {\r\n    font-size: 0.8rem;\r\n    color: rgba(255, 255, 255, 0.493);\r\n}\r\n\r\n.bin {\r\n    color: var(--text);\r\n    transition: color 0.5s;\r\n}\r\n\r\n.bin:hover {\r\n    color: var(--secondary);\r\n}\r\n\r\n.todo-star {\r\n    color:gold;\r\n}\r\n\r\n.priority {\r\n    font-size: 1rem;\r\n}\r\n\r\n.priority.low {\r\n    color: green;\r\n}\r\n\r\n.priority.medium {\r\n    color: yellow;\r\n}\r\n\r\n.priority.high {\r\n    color: red;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/tray.css"],"names":[],"mappings":"AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,mBAAmB;IACnB,kBAAkB;IAClB,UAAU;IACV,gBAAgB;IAChB,kCAAkC;IAClC,WAAW;IACX,gBAAgB;IAChB,UAAU;AACd;;AAEA;IACI,kCAAkC;IAClC,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,6BAA6B;IAC7B,mBAAmB;IACnB,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,2BAA2B;AAC/B;AACA;IACI,+DAA+D;AACnE;AACA;IACI,iCAAiC;IACjC,4CAA4C;AAChD;;;AAGA;EACE,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,kBAAkB;EAClB,eAAe;EACf,2BAA2B;AAC7B;AACA;IACI,gCAAgC;AACpC;AACA;IACI,gCAAgC;AACpC;;AAEA;IACI,WAAW;IACX,iBAAiB;IACjB,gBAAgB;IAChB,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,SAAS;IACT,mBAAmB;IACnB,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,sBAAsB;AAC1B;AACA;IACI,uBAAuB;AAC3B;;;AAGA;IACI,UAAU;AACd;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,UAAU;AACd","sourcesContent":["@import url(./themes.css);\r\n\r\n.tray {\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--tiles);\r\n    border: none;\r\n    border-radius: 2rem;\r\n    color: var(--text);\r\n    width: 75%;\r\n    min-width: 400px;\r\n    font-family: 'Poppins', sans-serif;\r\n    padding: 2%;\r\n    overflow-y: auto;\r\n    gap:0.5rem;\r\n}\r\n\r\n.todo {\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 1.2rem;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    background-color: var(--todo);\r\n    border-radius: 1rem;\r\n    height: 1rem;\r\n    align-items: center;\r\n    padding: 0.5rem;\r\n    transition: box-shadow 0.5s;\r\n}\r\n.todo:hover {\r\n    box-shadow: 0 2px 6px 0 var(--check), 0 4px 10px 0 var(--check);\r\n}\r\n.todo-done {\r\n    color: rgba(128, 128, 128, 0.468);\r\n    text-decoration: line-through var(--primary);\r\n}\r\n\r\n\r\n.check-box {\r\n  height: 1.2rem;\r\n  width: 1.2rem;\r\n  background-color: var(--check);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n  transition: background 0.5s;\r\n}\r\n.check-box:hover {\r\n    background-color: var(--primary);\r\n}\r\n.completed {\r\n    background-color: var(--primary);\r\n}\r\n\r\n.todo-description {\r\n    color: gray;\r\n    font-size: 0.8rem;\r\n    overflow-y: auto;\r\n    overflow-x: visible;\r\n}\r\n\r\n.left-half,.right-half {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    gap: 1rem;\r\n    align-items: center;\r\n    overflow-y: auto;\r\n}\r\n\r\n.due-date {\r\n    color:var(--primary);\r\n}\r\n\r\n.project-name {\r\n    font-size: 0.8rem;\r\n    color: rgba(255, 255, 255, 0.493);\r\n}\r\n\r\n.bin {\r\n    color: var(--text);\r\n    transition: color 0.5s;\r\n}\r\n.bin:hover {\r\n    color: var(--secondary);\r\n}\r\n\r\n\r\n.todo-star {\r\n    color:gold;\r\n}\r\n\r\n.priority {\r\n    font-size: 1rem;\r\n}\r\n\r\n.priority.low {\r\n    color: green;\r\n}\r\n\r\n.priority.medium {\r\n    color: yellow;\r\n}\r\n\r\n.priority.high {\r\n    color: red;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1397,17 +1408,46 @@ const filterProject = (todos,name) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   addProject: () => (/* binding */ addProject),
+/* harmony export */   checkStorageProjects: () => (/* binding */ checkStorageProjects),
 /* harmony export */   getProjects: () => (/* binding */ getProjects)
 /* harmony export */ });
-const projects = ["my projects"];
+/* harmony import */ var _projectsDOM__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectsDOM */ "./src/components/projectsDOM.js");
 
-const addProject = (project) => {
+const projects = [];
+
+const addProject = (project,flag) => {
     projects.push(project);
+    if(!flag) {localStorage.setItem('projectList', JSON.stringify(projects))};
 }
 
 const getProjects = () => {
     return projects;
 }
+
+const checkStorageProjects = () => {
+    if(!localStorage.getItem('projectList')) {
+        populateProjects();
+    }
+    else {
+        setProjects(localStorage.getItem('projectList'));
+    }
+}
+
+const populateProjects = () => {
+    addProject("my project", false);
+    (0,_projectsDOM__WEBPACK_IMPORTED_MODULE_0__.addToProjectTray)("my project", document.querySelector('.project-segment'));
+}
+
+const setProjects = (projectList) => {
+     const parsedList=JSON.parse(projectList);
+     
+     parsedList.forEach(savedProject => {
+         addProject(savedProject,true);
+         (0,_projectsDOM__WEBPACK_IMPORTED_MODULE_0__.addToProjectTray)(savedProject, document.querySelector('.project-segment'));
+     })
+}
+
+
 
 
 
@@ -1422,6 +1462,7 @@ const getProjects = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   addToProjectTray: () => (/* binding */ addToProjectTray),
 /* harmony export */   getCurrProject: () => (/* binding */ getCurrProject),
 /* harmony export */   newProject: () => (/* binding */ newProject),
 /* harmony export */   printProjects: () => (/* binding */ printProjects),
@@ -1460,6 +1501,7 @@ const printProjects = () => {
 }
 
 const addToProjectTray = (projectElement,projectSegment) => {
+    document.querySelector('.new-project').remove();
     const project=document.createElement('div');
         project.classList.add('element');
         project.setAttribute('id','project');
@@ -1470,6 +1512,7 @@ const addToProjectTray = (projectElement,projectSegment) => {
         })
         projectSegment.appendChild(project);
         (0,_navCol__WEBPACK_IMPORTED_MODULE_2__.addSegmentOnClick)();
+    newProject();
 }
 
 const newProject = () => {
@@ -1480,11 +1523,11 @@ const newProject = () => {
     addIcon.classList.add('add-icon');
     addIcon.textContent="+";
     newProj.appendChild(addIcon);
+    projectSegment.appendChild(newProj);
     addIcon.addEventListener('click', function(){
         addIcon.remove();
         inputProjName(newProj);
     })
-    projectSegment.appendChild(newProj);
 }
 
 const inputProjName = (newProj) => {
@@ -1500,15 +1543,15 @@ const inputProjName = (newProj) => {
     newProj.addEventListener('submit', (e)=>{
         e.preventDefault();
         handleInput(inputProj.value);
-        newProj.remove();
+        //newProj.remove();
         addToProjectTray(inputProj.value, document.querySelector('.project-segment'));
-        newProject();
+        //newProject();
     })
     cancelProjForm();
 }
 
 const handleInput = (input) => {
-    ;(0,_projects__WEBPACK_IMPORTED_MODULE_0__.addProject)(input);
+    ;(0,_projects__WEBPACK_IMPORTED_MODULE_0__.addProject)(input,0);
 }
 
 const cancelProjForm = () => {
@@ -1786,26 +1829,18 @@ const toggleStar = (inputStar) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   addTodo: () => (/* binding */ addTodo),
+/* harmony export */   checkStorage: () => (/* binding */ checkStorage),
 /* harmony export */   delTodo: () => (/* binding */ delTodo),
+/* harmony export */   findTodo: () => (/* binding */ findTodo),
 /* harmony export */   formatDate: () => (/* binding */ formatDate),
 /* harmony export */   getTodos: () => (/* binding */ getTodos),
-/* harmony export */   printTodos: () => (/* binding */ printTodos)
+/* harmony export */   printTodos: () => (/* binding */ printTodos),
+/* harmony export */   saveToStorage: () => (/* binding */ saveToStorage)
 /* harmony export */ });
-/* harmony import */ var _projects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects */ "./src/components/projects.js");
-/* harmony import */ var _todosDOM__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todosDOM */ "./src/components/todosDOM.js");
+/* harmony import */ var _todosDOM__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todosDOM */ "./src/components/todosDOM.js");
 
 
-
-    let todos = [{
-        title:"Example",
-        description:"What do you think",
-        due:new Date(),
-        project:(0,_projects__WEBPACK_IMPORTED_MODULE_0__.getProjects)()[0],
-        starred:true,
-        status:false,
-        priority:"Medium",
-    },
-];
+let todos = [];
 
 const getTodos = () => {
     return todos;
@@ -1822,10 +1857,11 @@ function todo(title,description,due,project,starred,status,priority) {
 }
 
 const addTodo = (title,description,due,project,starred,status,priority) => {
-    let newTodo = new todo(title,description,new Date(due),project,(starred === 'true'),status,priority);
+    let newTodo = new todo(title,description,new Date(due),project,(starred === 'true' || starred === true),status,priority);
+    if(checkDuplicate(newTodo)){return;}
+    (0,_todosDOM__WEBPACK_IMPORTED_MODULE_0__.addToTray)(newTodo);
     todos.push(newTodo);
-    (0,_todosDOM__WEBPACK_IMPORTED_MODULE_1__.addToTray)(newTodo);
-    console.log(todos);
+    saveToStorage();
 }
 
 const findTodo = (name) => {
@@ -1838,6 +1874,7 @@ const findTodo = (name) => {
 
 const delTodo = (name) => {
     removeItem(findTodo(name),todos);
+    saveToStorage()
 }
 
 const removeItem = (index,array) => {
@@ -1855,10 +1892,42 @@ const formatDate = (date) => {
 
 const printTodos = (todos) => {
     todos.forEach(todoObj => {
-        ;(0,_todosDOM__WEBPACK_IMPORTED_MODULE_1__.addToTray)(todoObj);
+        ;(0,_todosDOM__WEBPACK_IMPORTED_MODULE_0__.addToTray)(todoObj);
     });
 }
 
+const checkStorage = () => {
+    if(!localStorage.getItem('todoList')) {
+        populateTodos();
+    }
+    else {
+        setTodos(localStorage.getItem('todoList'));
+    }
+}
+
+const populateTodos = () => {
+    console.log('New session, hello there!')
+}
+
+const setTodos = (todoList) => {
+     const parsedList=JSON.parse(todoList);
+     parsedList.forEach(savedTodo => {
+        addTodo(savedTodo.title,savedTodo.description,savedTodo.due,savedTodo.project,savedTodo.starred,savedTodo.status,savedTodo.priority);
+     })
+     ;(0,_todosDOM__WEBPACK_IMPORTED_MODULE_0__.clearTray)();
+}
+
+const checkDuplicate = (todoObj) => {
+    const i = findTodo(todoObj.title);
+    if(i==undefined){return false};
+    if(todoObj.description==todos[i].description, todoObj.project==todos[i].project, todoObj.due==todos[i].due) {
+        return true;
+    }
+}
+
+const saveToStorage = () => {
+    localStorage.setItem('todoList', JSON.stringify(todos));
+}
 
 
 
@@ -1876,9 +1945,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   clearTray: () => (/* binding */ clearTray),
 /* harmony export */   removeTodo: () => (/* binding */ removeTodo)
 /* harmony export */ });
-/* harmony import */ var _inbox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inbox */ "./src/components/inbox.js");
-/* harmony import */ var _todos__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todos */ "./src/components/todos.js");
-
+/* harmony import */ var _todos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todos */ "./src/components/todos.js");
  
 
 const addToTray = (todoObj) => {
@@ -1893,6 +1960,7 @@ const addToTray = (todoObj) => {
     const bin = document.createElement('div');
     const star = document.createElement('div');
     const priority = document.createElement('div');
+    const description = document.createElement('div');
 
     priority.classList.add('priority');
     todo.classList.add('todo');
@@ -1903,6 +1971,7 @@ const addToTray = (todoObj) => {
     rightHalf.classList.add('right-half');
     bin.classList.add('bin');
     star.classList.add('todo-star');
+    description.classList.add('todo-description');
 
     selectStatus(todoObj,checkBox,todo);
     selectPriority(todoObj,priority);
@@ -1913,15 +1982,15 @@ const addToTray = (todoObj) => {
 
     toggleStatus(todoObj,checkBox,todo);
    
-
     name.textContent=todoObj.title;
-    dueDate.textContent=(0,_todos__WEBPACK_IMPORTED_MODULE_1__.formatDate)(todoObj.due);
+    dueDate.textContent=(0,_todos__WEBPACK_IMPORTED_MODULE_0__.formatDate)(todoObj.due);
     projectName.textContent=todoObj.project;
     bin.innerHTML='<i class="fa-solid fa-trash"></i>';
     bin.dataset.hook=todoObj.title;
     star.innerHTML='<i class="fa-solid fa-star"></i>'
+    description.textContent=charLimit(todoObj.description,100);
 
-    leftHalf.append(checkBox, name);
+    leftHalf.append(checkBox, name, description);
     rightHalf.append(star,priority, projectName, dueDate, bin);
 
     todo.append(leftHalf,rightHalf);
@@ -1942,7 +2011,7 @@ const addBinListeners = () => {
     bins.forEach(bin => {
         bin.addEventListener('click',()=>{
             const name = bin.dataset.hook;
-            (0,_todos__WEBPACK_IMPORTED_MODULE_1__.delTodo)(name);
+            (0,_todos__WEBPACK_IMPORTED_MODULE_0__.delTodo)(name);
             removeTodo(bin);
         })
     });
@@ -1972,12 +2041,14 @@ const toggleStatus = (todoObj,checkBox,todo) => {
             checkBox.classList.add('completed');
             todo.classList.add('todo-done');
             todoObj.status=true;
+            
         }
         else if(todoObj.status==true) {
             checkBox.classList.remove('completed');
             todo.classList.remove('todo-done')
             todoObj.status=false;
         }
+        (0,_todos__WEBPACK_IMPORTED_MODULE_0__.saveToStorage)()
     })
 }
 
@@ -1988,6 +2059,11 @@ const selectStatus = (todoObj,checkBox,todo) => {
         todo.classList.add('todo-done');
     }
 }
+
+const charLimit = (string, limit) => {
+    return string.substring(0, limit)
+}
+
 
 
 
@@ -3269,6 +3345,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./page */ "./src/page.js");
 /* harmony import */ var _components_todoForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/todoForm */ "./src/components/todoForm.js");
 /* harmony import */ var _components_projectsDOM__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/projectsDOM */ "./src/components/projectsDOM.js");
+/* harmony import */ var _components_todos__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/todos */ "./src/components/todos.js");
+/* harmony import */ var _components_projects__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/projects */ "./src/components/projects.js");
+
+
 
 
 
@@ -3279,6 +3359,7 @@ __webpack_require__.r(__webpack_exports__);
 // Loading page
 (0,_page__WEBPACK_IMPORTED_MODULE_2__.loadTitle)();
 (0,_page__WEBPACK_IMPORTED_MODULE_2__.loadContent)();
+
 
 //loading Navigation column
 
@@ -3291,9 +3372,12 @@ __webpack_require__.r(__webpack_exports__);
 //Loading projects
 (0,_components_projectsDOM__WEBPACK_IMPORTED_MODULE_4__.printProjects)();
 (0,_components_projectsDOM__WEBPACK_IMPORTED_MODULE_4__.newProject)();
+(0,_components_projects__WEBPACK_IMPORTED_MODULE_6__.checkStorageProjects)();
+
 
 //Loading inbox initially
 (0,_components_inbox__WEBPACK_IMPORTED_MODULE_0__.createTray)();
+(0,_components_todos__WEBPACK_IMPORTED_MODULE_5__.checkStorage)();
 (0,_components_inbox__WEBPACK_IMPORTED_MODULE_0__.openInbox)();
 (0,_components_todoForm__WEBPACK_IMPORTED_MODULE_3__.todoCreateButton)();
 

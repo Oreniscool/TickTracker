@@ -27,6 +27,7 @@ const printProjects = () => {
 }
 
 const addToProjectTray = (projectElement,projectSegment) => {
+    document.querySelector('.new-project').remove();
     const project=document.createElement('div');
         project.classList.add('element');
         project.setAttribute('id','project');
@@ -37,6 +38,7 @@ const addToProjectTray = (projectElement,projectSegment) => {
         })
         projectSegment.appendChild(project);
         addSegmentOnClick();
+    newProject();
 }
 
 const newProject = () => {
@@ -47,11 +49,11 @@ const newProject = () => {
     addIcon.classList.add('add-icon');
     addIcon.textContent="+";
     newProj.appendChild(addIcon);
+    projectSegment.appendChild(newProj);
     addIcon.addEventListener('click', function(){
         addIcon.remove();
         inputProjName(newProj);
     })
-    projectSegment.appendChild(newProj);
 }
 
 const inputProjName = (newProj) => {
@@ -67,15 +69,15 @@ const inputProjName = (newProj) => {
     newProj.addEventListener('submit', (e)=>{
         e.preventDefault();
         handleInput(inputProj.value);
-        newProj.remove();
+        //newProj.remove();
         addToProjectTray(inputProj.value, document.querySelector('.project-segment'));
-        newProject();
+        //newProject();
     })
     cancelProjForm();
 }
 
 const handleInput = (input) => {
-    addProject(input);
+    addProject(input,0);
 }
 
 const cancelProjForm = () => {
@@ -87,4 +89,4 @@ const cancelProjForm = () => {
         }
     })
 }
-export {printProjects, newProject, getCurrProject, resetCurrProject};
+export {printProjects, newProject, getCurrProject, resetCurrProject, addToProjectTray};

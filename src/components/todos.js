@@ -1,16 +1,6 @@
-import { getProjects } from "./projects";
-import { addToTray } from "./todosDOM";
+import { addToTray, clearTray } from "./todosDOM";
 
-    let todos = [{
-        title:"Example",
-        description:"What do you think",
-        due:new Date(),
-        project:getProjects()[0],
-        starred:true,
-        status:false,
-        priority:"Medium",
-    },
-];
+let todos = [];
 
 const getTodos = () => {
     return todos;
@@ -27,10 +17,11 @@ function todo(title,description,due,project,starred,status,priority) {
 }
 
 const addTodo = (title,description,due,project,starred,status,priority) => {
-    let newTodo = new todo(title,description,new Date(due),project,(starred === 'true'),status,priority);
-    todos.push(newTodo);
+    let newTodo = new todo(title,description,new Date(due),project,(starred === 'true' || starred === true),status,priority);
+    if(checkDuplicate(newTodo)){return;}
     addToTray(newTodo);
-    console.log(todos);
+    todos.push(newTodo);
+    saveToStorage();
 }
 
 const findTodo = (name) => {
@@ -43,6 +34,7 @@ const findTodo = (name) => {
 
 const delTodo = (name) => {
     removeItem(findTodo(name),todos);
+    saveToStorage()
 }
 
 const removeItem = (index,array) => {
@@ -64,5 +56,37 @@ const printTodos = (todos) => {
     });
 }
 
+const checkStorage = () => {
+    if(!localStorage.getItem('todoList')) {
+        populateTodos();
+    }
+    else {
+        setTodos(localStorage.getItem('todoList'));
+    }
+}
 
-export {getTodos, addTodo, delTodo, formatDate, printTodos};
+const populateTodos = () => {
+    console.log('New session, hello there!')
+}
+
+const setTodos = (todoList) => {
+     const parsedList=JSON.parse(todoList);
+     parsedList.forEach(savedTodo => {
+        addTodo(savedTodo.title,savedTodo.description,savedTodo.due,savedTodo.project,savedTodo.starred,savedTodo.status,savedTodo.priority);
+     })
+     clearTray();
+}
+
+const checkDuplicate = (todoObj) => {
+    const i = findTodo(todoObj.title);
+    if(i==undefined){return false};
+    if(todoObj.description==todos[i].description, todoObj.project==todos[i].project, todoObj.due==todos[i].due) {
+        return true;
+    }
+}
+
+const saveToStorage = () => {
+    localStorage.setItem('todoList', JSON.stringify(todos));
+}
+
+export {getTodos, addTodo, delTodo, formatDate, printTodos, findTodo, checkStorage, saveToStorage};

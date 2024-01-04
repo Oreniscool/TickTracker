@@ -3,11 +3,14 @@ import { navCol, loadSegments, addSelected, addSegmentOnClick } from "./componen
 import { loadContent, loadTitle } from "./page";
 import { todoCreateButton } from './components/todoForm';
 import { printProjects, newProject } from "./components/projectsDOM";
+import { checkStorage } from "./components/todos";
+import { checkStorageProjects } from "./components/projects";
 
 
 // Loading page
 loadTitle();
 loadContent();
+
 
 //loading Navigation column
 
@@ -20,9 +23,12 @@ addSelected(document.querySelector('.inbox'));
 //Loading projects
 printProjects();
 newProject();
+checkStorageProjects();
+
 
 //Loading inbox initially
 createTray();
+checkStorage();
 openInbox();
 todoCreateButton();
 

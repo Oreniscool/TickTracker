@@ -1,7 +1,5 @@
 @import url(./themes.css);
 
-
-
 .tray {
     display: flex;
     flex-direction: column;
@@ -28,7 +26,10 @@
     height: 1rem;
     align-items: center;
     padding: 0.5rem;
-    transition: background 0.5s;
+    transition: box-shadow 0.5s;
+}
+.todo:hover {
+    box-shadow: 0 2px 6px 0 var(--check), 0 4px 10px 0 var(--check);
 }
 .todo-done {
     color: rgba(128, 128, 128, 0.468);
@@ -51,11 +52,19 @@
     background-color: var(--primary);
 }
 
+.todo-description {
+    color: gray;
+    font-size: 0.8rem;
+    overflow-y: auto;
+    overflow-x: visible;
+}
+
 .left-half,.right-half {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     align-items: center;
+    overflow-y: auto;
 }
 
 .due-date {
@@ -71,10 +80,10 @@
     color: var(--text);
     transition: color 0.5s;
 }
-
 .bin:hover {
     color: var(--secondary);
 }
+
 
 .todo-star {
     color:gold;

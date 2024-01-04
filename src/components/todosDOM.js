@@ -1,5 +1,4 @@
-import { openInbox } from "./inbox";
-import { delTodo, formatDate, getTodos } from "./todos"; 
+import { delTodo, formatDate, saveToStorage} from "./todos"; 
 
 const addToTray = (todoObj) => {
     const tray = document.querySelector('.tray');
@@ -13,6 +12,7 @@ const addToTray = (todoObj) => {
     const bin = document.createElement('div');
     const star = document.createElement('div');
     const priority = document.createElement('div');
+    const description = document.createElement('div');
 
     priority.classList.add('priority');
     todo.classList.add('todo');
@@ -23,6 +23,7 @@ const addToTray = (todoObj) => {
     rightHalf.classList.add('right-half');
     bin.classList.add('bin');
     star.classList.add('todo-star');
+    description.classList.add('todo-description');
 
     selectStatus(todoObj,checkBox,todo);
     selectPriority(todoObj,priority);
@@ -33,15 +34,15 @@ const addToTray = (todoObj) => {
 
     toggleStatus(todoObj,checkBox,todo);
    
-
     name.textContent=todoObj.title;
     dueDate.textContent=formatDate(todoObj.due);
     projectName.textContent=todoObj.project;
     bin.innerHTML='<i class="fa-solid fa-trash"></i>';
     bin.dataset.hook=todoObj.title;
     star.innerHTML='<i class="fa-solid fa-star"></i>'
+    description.textContent=charLimit(todoObj.description,100);
 
-    leftHalf.append(checkBox, name);
+    leftHalf.append(checkBox, name, description);
     rightHalf.append(star,priority, projectName, dueDate, bin);
 
     todo.append(leftHalf,rightHalf);
@@ -92,12 +93,14 @@ const toggleStatus = (todoObj,checkBox,todo) => {
             checkBox.classList.add('completed');
             todo.classList.add('todo-done');
             todoObj.status=true;
+            
         }
         else if(todoObj.status==true) {
             checkBox.classList.remove('completed');
             todo.classList.remove('todo-done')
             todoObj.status=false;
         }
+        saveToStorage()
     })
 }
 
@@ -108,5 +111,10 @@ const selectStatus = (todoObj,checkBox,todo) => {
         todo.classList.add('todo-done');
     }
 }
+
+const charLimit = (string, limit) => {
+    return string.substring(0, limit)
+}
+
 
 export {addToTray, removeTodo, clearTray}
