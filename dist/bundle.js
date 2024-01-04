@@ -328,7 +328,23 @@ body {
     gap: 1rem;
     justify-content: space-evenly;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAEA;IACI,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,mCAAmC;IACnC,aAAa;IACb,sBAAsB;IACtB,kBAAkB;AACtB;;AAEA;IACI,8BAA8B;IAC9B,oBAAoB;IACpB,qCAAqC;IACrC,cAAc;IACd,aAAa;IACb,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,YAAY;IACZ,WAAW;IACX,SAAS;IACT,6BAA6B;AACjC","sourcesContent":["@import url(./themes.css);\r\n\r\nhtml, body {\r\n    margin: 0px;\r\n    height: 100vh;\r\n}\r\n\r\nbody {\r\n    background-color: var(--background);\r\n    display: flex;\r\n    flex-direction: column;\r\n    color: var(--text);\r\n}\r\n\r\n.title-bar {\r\n    background-color: var(--tiles);\r\n    color:var(--primary);\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size:3rem;\r\n    padding: 1rem;\r\n    justify-items: center;\r\n    text-align: center;\r\n    font-weight: bolder;\r\n}\r\n\r\n.content {\r\n    display: flex;\r\n    flex-direction: row;\r\n    margin: 2rem;\r\n    height: 80%;\r\n    gap: 1rem;\r\n    justify-content: space-evenly;\r\n}\r\n"],"sourceRoot":""}]);
+
+.credit {
+    position: fixed;
+    top: 1rem;
+    right:1rem;
+    font-size: 2rem;
+    transition: all 0.5s;
+}
+.credit:hover {
+    color: var(--secondary);
+    transform: scale(1.2);
+}
+
+a:link, a:visited, a:hover, a:active { 
+    color: var(--primary);
+    text-decoration: none; 
+} `, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAEA;IACI,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,mCAAmC;IACnC,aAAa;IACb,sBAAsB;IACtB,kBAAkB;AACtB;;AAEA;IACI,8BAA8B;IAC9B,oBAAoB;IACpB,qCAAqC;IACrC,cAAc;IACd,aAAa;IACb,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,YAAY;IACZ,WAAW;IACX,SAAS;IACT,6BAA6B;AACjC;;AAEA;IACI,eAAe;IACf,SAAS;IACT,UAAU;IACV,eAAe;IACf,oBAAoB;AACxB;AACA;IACI,uBAAuB;IACvB,qBAAqB;AACzB;;AAEA;IACI,qBAAqB;IACrB,qBAAqB;AACzB","sourcesContent":["@import url(./themes.css);\r\n\r\nhtml, body {\r\n    margin: 0px;\r\n    height: 100vh;\r\n}\r\n\r\nbody {\r\n    background-color: var(--background);\r\n    display: flex;\r\n    flex-direction: column;\r\n    color: var(--text);\r\n}\r\n\r\n.title-bar {\r\n    background-color: var(--tiles);\r\n    color:var(--primary);\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size:3rem;\r\n    padding: 1rem;\r\n    justify-items: center;\r\n    text-align: center;\r\n    font-weight: bolder;\r\n}\r\n\r\n.content {\r\n    display: flex;\r\n    flex-direction: row;\r\n    margin: 2rem;\r\n    height: 80%;\r\n    gap: 1rem;\r\n    justify-content: space-evenly;\r\n}\r\n\r\n.credit {\r\n    position: fixed;\r\n    top: 1rem;\r\n    right:1rem;\r\n    font-size: 2rem;\r\n    transition: all 0.5s;\r\n}\r\n.credit:hover {\r\n    color: var(--secondary);\r\n    transform: scale(1.2);\r\n}\r\n\r\na:link, a:visited, a:hover, a:active { \r\n    color: var(--primary);\r\n    text-decoration: none; \r\n} "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2120,9 +2136,13 @@ __webpack_require__.r(__webpack_exports__);
 
 const loadTitle = () => {
     const titleBar = document.createElement('div');
+    const credit = document.createElement('div');
+    credit.classList.add('credit');
     titleBar.classList.add('title-bar');
     titleBar.classList.add('pink');
     titleBar.textContent="TickTracker";
+    credit.innerHTML='<a href="https://github.com/Oreniscool"><i class="fa-brands fa-github"></i></a>';
+    titleBar.appendChild(credit);
     document.body.appendChild(titleBar);
 }
 

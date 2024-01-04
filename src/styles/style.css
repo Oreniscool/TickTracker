@@ -31,3 +31,20 @@ body {
     gap: 1rem;
     justify-content: space-evenly;
 }
+
+.credit {
+    position: fixed;
+    top: 1rem;
+    right:1rem;
+    font-size: 2rem;
+    transition: all 0.5s;
+}
+.credit:hover {
+    color: var(--secondary);
+    transform: scale(1.2);
+}
+
+a:link, a:visited, a:hover, a:active { 
+    color: var(--primary);
+    text-decoration: none; 
+} 
