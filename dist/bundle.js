@@ -443,6 +443,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tray {
     padding: 0.5rem;
     transition: background 0.5s;
 }
+.todo-done {
+    color: rgba(128, 128, 128, 0.468);
+    text-decoration: line-through var(--primary);
+}
 
 
 .check-box {
@@ -454,6 +458,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tray {
   transition: background 0.5s;
 }
 .check-box:hover {
+    background-color: var(--primary);
+}
+.completed {
     background-color: var(--primary);
 }
 
@@ -500,7 +507,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tray {
 
 .priority.high {
     color: red;
-}`, "",{"version":3,"sources":["webpack://./src/styles/tray.css"],"names":[],"mappings":"AAIA;IACI,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,mBAAmB;IACnB,kBAAkB;IAClB,UAAU;IACV,gBAAgB;IAChB,kCAAkC;IAClC,WAAW;IACX,gBAAgB;IAChB,UAAU;AACd;;AAEA;IACI,kCAAkC;IAClC,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,6BAA6B;IAC7B,mBAAmB;IACnB,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,2BAA2B;AAC/B;;;AAGA;EACE,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,kBAAkB;EAClB,eAAe;EACf,2BAA2B;AAC7B;AACA;IACI,gCAAgC;AACpC;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,sBAAsB;AAC1B;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,UAAU;AACd","sourcesContent":["@import url(./themes.css);\r\n\r\n\r\n\r\n.tray {\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--tiles);\r\n    border: none;\r\n    border-radius: 2rem;\r\n    color: var(--text);\r\n    width: 75%;\r\n    min-width: 400px;\r\n    font-family: 'Poppins', sans-serif;\r\n    padding: 2%;\r\n    overflow-y: auto;\r\n    gap:0.5rem;\r\n}\r\n\r\n.todo {\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 1.2rem;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    background-color: var(--todo);\r\n    border-radius: 1rem;\r\n    height: 1rem;\r\n    align-items: center;\r\n    padding: 0.5rem;\r\n    transition: background 0.5s;\r\n}\r\n\r\n\r\n.check-box {\r\n  height: 1.2rem;\r\n  width: 1.2rem;\r\n  background-color: var(--check);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n  transition: background 0.5s;\r\n}\r\n.check-box:hover {\r\n    background-color: var(--primary);\r\n}\r\n\r\n.left-half,.right-half {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    gap: 1rem;\r\n    align-items: center;\r\n}\r\n\r\n.due-date {\r\n    color:var(--primary);\r\n}\r\n\r\n.project-name {\r\n    font-size: 0.8rem;\r\n    color: rgba(255, 255, 255, 0.493);\r\n}\r\n\r\n.bin {\r\n    color: var(--text);\r\n    transition: color 0.5s;\r\n}\r\n\r\n.bin:hover {\r\n    color: var(--secondary);\r\n}\r\n\r\n.todo-star {\r\n    color:gold;\r\n}\r\n\r\n.priority {\r\n    font-size: 1rem;\r\n}\r\n\r\n.priority.low {\r\n    color: green;\r\n}\r\n\r\n.priority.medium {\r\n    color: yellow;\r\n}\r\n\r\n.priority.high {\r\n    color: red;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/tray.css"],"names":[],"mappings":"AAIA;IACI,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,YAAY;IACZ,mBAAmB;IACnB,kBAAkB;IAClB,UAAU;IACV,gBAAgB;IAChB,kCAAkC;IAClC,WAAW;IACX,gBAAgB;IAChB,UAAU;AACd;;AAEA;IACI,kCAAkC;IAClC,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,6BAA6B;IAC7B,mBAAmB;IACnB,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,2BAA2B;AAC/B;AACA;IACI,iCAAiC;IACjC,4CAA4C;AAChD;;;AAGA;EACE,cAAc;EACd,aAAa;EACb,8BAA8B;EAC9B,kBAAkB;EAClB,eAAe;EACf,2BAA2B;AAC7B;AACA;IACI,gCAAgC;AACpC;AACA;IACI,gCAAgC;AACpC;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,sBAAsB;AAC1B;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,UAAU;AACd","sourcesContent":["@import url(./themes.css);\r\n\r\n\r\n\r\n.tray {\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--tiles);\r\n    border: none;\r\n    border-radius: 2rem;\r\n    color: var(--text);\r\n    width: 75%;\r\n    min-width: 400px;\r\n    font-family: 'Poppins', sans-serif;\r\n    padding: 2%;\r\n    overflow-y: auto;\r\n    gap:0.5rem;\r\n}\r\n\r\n.todo {\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 1.2rem;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    background-color: var(--todo);\r\n    border-radius: 1rem;\r\n    height: 1rem;\r\n    align-items: center;\r\n    padding: 0.5rem;\r\n    transition: background 0.5s;\r\n}\r\n.todo-done {\r\n    color: rgba(128, 128, 128, 0.468);\r\n    text-decoration: line-through var(--primary);\r\n}\r\n\r\n\r\n.check-box {\r\n  height: 1.2rem;\r\n  width: 1.2rem;\r\n  background-color: var(--check);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n  transition: background 0.5s;\r\n}\r\n.check-box:hover {\r\n    background-color: var(--primary);\r\n}\r\n.completed {\r\n    background-color: var(--primary);\r\n}\r\n\r\n.left-half,.right-half {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    gap: 1rem;\r\n    align-items: center;\r\n}\r\n\r\n.due-date {\r\n    color:var(--primary);\r\n}\r\n\r\n.project-name {\r\n    font-size: 0.8rem;\r\n    color: rgba(255, 255, 255, 0.493);\r\n}\r\n\r\n.bin {\r\n    color: var(--text);\r\n    transition: color 0.5s;\r\n}\r\n\r\n.bin:hover {\r\n    color: var(--secondary);\r\n}\r\n\r\n.todo-star {\r\n    color:gold;\r\n}\r\n\r\n.priority {\r\n    font-size: 1rem;\r\n}\r\n\r\n.priority.low {\r\n    color: green;\r\n}\r\n\r\n.priority.medium {\r\n    color: yellow;\r\n}\r\n\r\n.priority.high {\r\n    color: red;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1889,7 +1896,6 @@ const addToTray = (todoObj) => {
 
     priority.classList.add('priority');
     todo.classList.add('todo');
-    checkBox.classList.add('check-box');
     name.classList.add('name');
     dueDate.classList.add('due-date');
     projectName.classList.add('project-name');
@@ -1898,15 +1904,15 @@ const addToTray = (todoObj) => {
     bin.classList.add('bin');
     star.classList.add('todo-star');
 
+    selectStatus(todoObj,checkBox,todo);
     selectPriority(todoObj,priority);
 
     if(todoObj.starred==false) {
         star.style.display='none';
     }
 
-    if(todoObj.status==true) {
-        checkBox.classList.add('completed');
-    }
+    toggleStatus(todoObj,checkBox,todo);
+   
 
     name.textContent=todoObj.title;
     dueDate.textContent=(0,_todos__WEBPACK_IMPORTED_MODULE_1__.formatDate)(todoObj.due);
@@ -1956,6 +1962,30 @@ const selectPriority = (todoObj,priority) => {
     }
     else if(todoObj.priority=="High") {
         priority.classList.add("high");
+    }
+}
+
+
+const toggleStatus = (todoObj,checkBox,todo) => {
+    checkBox.addEventListener('click', ()=> {
+        if(todoObj.status==false) {
+            checkBox.classList.add('completed');
+            todo.classList.add('todo-done');
+            todoObj.status=true;
+        }
+        else if(todoObj.status==true) {
+            checkBox.classList.remove('completed');
+            todo.classList.remove('todo-done')
+            todoObj.status=false;
+        }
+    })
+}
+
+const selectStatus = (todoObj,checkBox,todo) => {
+    checkBox.classList.add('check-box');
+    if(todoObj.status==true) {
+        checkBox.classList.add('completed');
+        todo.classList.add('todo-done');
     }
 }
 

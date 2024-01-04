@@ -1,5 +1,5 @@
 import { openInbox } from "./inbox";
-import { delTodo, formatDate } from "./todos"; 
+import { delTodo, formatDate, getTodos } from "./todos"; 
 
 const addToTray = (todoObj) => {
     const tray = document.querySelector('.tray');
@@ -16,7 +16,6 @@ const addToTray = (todoObj) => {
 
     priority.classList.add('priority');
     todo.classList.add('todo');
-    checkBox.classList.add('check-box');
     name.classList.add('name');
     dueDate.classList.add('due-date');
     projectName.classList.add('project-name');
@@ -25,15 +24,15 @@ const addToTray = (todoObj) => {
     bin.classList.add('bin');
     star.classList.add('todo-star');
 
+    selectStatus(todoObj,checkBox,todo);
     selectPriority(todoObj,priority);
 
     if(todoObj.starred==false) {
         star.style.display='none';
     }
 
-    if(todoObj.status==true) {
-        checkBox.classList.add('completed');
-    }
+    toggleStatus(todoObj,checkBox,todo);
+   
 
     name.textContent=todoObj.title;
     dueDate.textContent=formatDate(todoObj.due);
@@ -83,6 +82,30 @@ const selectPriority = (todoObj,priority) => {
     }
     else if(todoObj.priority=="High") {
         priority.classList.add("high");
+    }
+}
+
+
+const toggleStatus = (todoObj,checkBox,todo) => {
+    checkBox.addEventListener('click', ()=> {
+        if(todoObj.status==false) {
+            checkBox.classList.add('completed');
+            todo.classList.add('todo-done');
+            todoObj.status=true;
+        }
+        else if(todoObj.status==true) {
+            checkBox.classList.remove('completed');
+            todo.classList.remove('todo-done')
+            todoObj.status=false;
+        }
+    })
+}
+
+const selectStatus = (todoObj,checkBox,todo) => {
+    checkBox.classList.add('check-box');
+    if(todoObj.status==true) {
+        checkBox.classList.add('completed');
+        todo.classList.add('todo-done');
     }
 }
 

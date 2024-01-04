@@ -30,6 +30,10 @@
     padding: 0.5rem;
     transition: background 0.5s;
 }
+.todo-done {
+    color: rgba(128, 128, 128, 0.468);
+    text-decoration: line-through var(--primary);
+}
 
 
 .check-box {
@@ -41,6 +45,9 @@
   transition: background 0.5s;
 }
 .check-box:hover {
+    background-color: var(--primary);
+}
+.completed {
     background-color: var(--primary);
 }
 
